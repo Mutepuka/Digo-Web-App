@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Poppins } from 'next/font/google';
 import Nav from '@components/Nav';
+import SearchFrom from '@components/SearchFrom';
 
 const poppins = Poppins({
     subsets:['latin'],
@@ -24,6 +25,7 @@ const RootLayout= ({children})=>{
                     <div className='gradient' />
                 </div> */}
                 <main className='app'>
+                    <SearchFrom/>
                     <Nav/>
                     {children}
                 </main>
