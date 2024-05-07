@@ -51,11 +51,11 @@ const handleOpenSearchForm=()=>{
                 <span></span>
             </button>
             <a className='navbar-brand text-brand' href='/'>
-                Estate<span className='color-b'> Agency</span>
+                Digo<span className='color-b'> Estate</span>
             </a>
 
             <div
-            className='navbar-collapse justify-content-center'
+            className='navbar-collapse collapsed justify-content-center'
             id='navbarDefault'
             >
                 <ul className='navbar-nav'>
