@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    color: #000000;
+}
+a{
+    color: #000;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+a:hover{
+    color: #2eca6a;
+    text-decoration: none;
+}
+.main{
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 120px 24px 160px 24px;
+    pointer-events: none;
+}
