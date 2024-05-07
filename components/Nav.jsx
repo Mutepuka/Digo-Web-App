@@ -1,11 +1,38 @@
 "use client";
 
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
+import Link from 'next/link';
 import nav from '@data/nav';
 
 const Nav = () => {
     const [scroll, setScroll] = useState(0);
     const [navList, setNavList] = useState(nav);
+
+    useEffect(() => {
+        window.addEventListener('scroll',()=>{
+            setScroll(window.scrollY)
+        });
+        return ()=>{
+            window.removeEventListener('scroll',()=>{
+                setScroll(window.scrollY)
+            });
+        }
+    }, [scroll]);
+
+const handleNavClick = (id)=>{
+    const newNavList= navList.map( nav =>{
+        nav.active = false;
+        if (nav.id === id) nav.active = true;
+        return nav;
+    });
+    setNavList(newNavList);
+
+}
+const handleOpenSearchForm=()=>{
+    document.body.classList.remove('box-collapse-closed');
+    document.body.classList.add('box-collapse-open');
+}
+    
 
   return (
     <nav className={`navbar navbar-default navbar-expand-lg fixed-top ${scroll > 100 ? 'navbar-reduce': 'navbar-trans'}`}>
@@ -27,17 +54,37 @@ const Nav = () => {
                 Estate<span className='color-b'> Agency</span>
             </a>
 
+            <div
+            className='navbar-collapse justify-content-center'
+            id='navbarDefault'
+            >
+                <ul className='navbar-nav'>
+                    {navList.map(item=>(
+                        <li className='nav-item' key={item.id}>
+                            <Link href={item.link}
+                            className={`nav-link ${item.active ? 'active': undefined}`}
+                            onClick={()=>handleNavClick(item.id)}
+                            >
+                                {item.name === 'Home' ?(
+                                    <i className='bi bi-house-door-fill'></i>
+                                ):(item.name)}
+                            </Link>
+                        </li>
+                    ))}
+
+                </ul>
+            </div>
+            
             <button
             type='button'
             className='btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse'
             data-bs-toggle='collapse'
             data-bs-target='#navbarTogglerDemo1'
-            onClick={()=>console.log('hello world')}
+            onClick={handleOpenSearchForm}
             >
                 <i className='bi bi-search'></i>
 
             </button>
-
         </div>
     </nav>
   )
