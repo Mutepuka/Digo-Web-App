@@ -1,4 +1,6 @@
 "use client";
+import '@styles/searchform.css';
+import { useState,useEffect } from 'react';
 
 const SearchFrom = () => {
 
@@ -46,8 +48,57 @@ const SearchFrom = () => {
                             <select className="form-control form-select form-control-a" id="city">
                                 <option>All Cities</option>
                                 <option>Lusaka</option>
+                                <option>CopperBelt</option>
                             </select>
                         </div>
+                    </div>
+                    <div className='col-md-6 mb-2'>
+                       <div className="form-group mt-3">
+                            <label htmlFor="bedrooms" className="pb-2">Bedrooms</label>
+                            <select className="form-control form-select form-control-a" id="bedrooms">
+                                <option>All</option>
+                                <option>01</option>
+                                <option>02</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className='col-md-6 mb-2'>
+                       <div className="form-group mt-3">
+                            <label htmlFor="garage" className="pb-2">Garages</label>
+                            <select className="form-control form-select form-control-a" id="garages">
+                                <option>All</option>
+                                <option>01</option>
+                                <option>02</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className='col-md-6 mb-2'>
+                       <div className="form-group mt-3">
+                            <label htmlFor="bathrooms" className="pb-2">Bathrooms</label>
+                            <select className="form-control form-select form-control-a" id="bathrooms">
+                                <option>All</option>
+                                <option>01</option>
+                                <option>02</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className='col-md-6 mb-2'>
+                       <div className="form-group mt-3">
+                            <label htmlFor="price" className="pb-2">Price</label>
+                            <select className="form-control form-select form-control-a" id="price">
+                                <option>All</option>
+                                <option>zmk4,000</option>
+                                <option>zmk6,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className='col-md-12'>
+                        <button type='submit' className='btn btn-b'>
+                            Search Property
+                        </button>
                     </div>
                 </div>
             </form>

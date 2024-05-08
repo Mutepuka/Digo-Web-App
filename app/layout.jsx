@@ -21,9 +21,6 @@ const RootLayout= ({children})=>{
     return(
         <html lang='en'>
             <body className={poppins.className}>
-                {/* <div className='main'>
-                    <div className='gradient' />
-                </div> */}
                 <main className='app'>
                     <SearchFrom/>
                     <Nav/>

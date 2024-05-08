@@ -3,6 +3,7 @@
 import {useState,useEffect} from 'react';
 import Link from 'next/link';
 import nav from '@data/nav';
+import '@styles/nav.css';
 
 const Nav = () => {
     const [scroll, setScroll] = useState(0);
