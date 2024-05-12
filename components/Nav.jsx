@@ -36,55 +36,55 @@ const handleOpenSearchForm=()=>{
     
 
   return (
-    <nav className={`navbar navbar-default navbar-expand-lg fixed-top ${scroll > 100 ? 'navbar-reduce': 'navbar-trans'}`}>
+    <nav
+    className={`navbar navbar-default navbar-expand-lg fixed-top ${
+        scroll > 100 ? 'nabar-reduce' : 'navbar-trans'
+    }`}
+    >
         <div className='container'>
-            <button
-            className='navbar-toggler collapsed'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarDefault'
-            aria-controls='navbarDefault'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-            >
+            <button className='navbar-toggler collapsed'
+             type='button'
+             data-bs-toggle='collapse'
+             data-bs-target='#navbarDefault'
+             aria-controls='false'
+             aria-label='Toggle navigation'
+             >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <a className='navbar-brand text-brand' href='/'>
-                Digo<span className='color-b'> Estate</span>
+                Digo <span className='color-b'>Estate</span>
             </a>
 
-            <div
-            className='navbar-collapse collapsed justify-content-center'
-            id='navbarDefault'
-            >
+            <div className='collapse navbar-collapse justify-content-center' id='navbarDefault'>
                 <ul className='navbar-nav'>
                     {navList.map(item=>(
                         <li className='nav-item' key={item.id}>
-                            <Link href={item.link}
+                            <Link
                             className={`nav-link ${item.active ? 'active': undefined}`}
-                            onClick={()=>handleNavClick(item.id)}
+                            href={item.link}
+                            onClick={()=> handleNavClick(item.id)}
                             >
-                                {item.name === 'Home' ?(
+                                {item.name === 'Home' ? (
                                     <i className='bi bi-house-door-fill'></i>
-                                ):(item.name)}
+                                ):(
+                                    item.name
+                                )}
                             </Link>
                         </li>
                     ))}
-
                 </ul>
             </div>
-            
+
             <button
             type='button'
             className='btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse'
             data-bs-toggle='collapse'
-            data-bs-target='#navbarTogglerDemo1'
+            data-bs-target='#navbarTogglerDemo01'
             onClick={handleOpenSearchForm}
             >
                 <i className='bi bi-search'></i>
-
             </button>
         </div>
     </nav>
