@@ -7,10 +7,31 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination} from 'swiper/modules';
 import '@styles/hero.css';
 import HeroSlide from './HeroSlide';
+import { client} from "@libs/sanity";
 
 const Hero = () => {
 
   const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+
+    const query = `*[_type == 'slides'][]{
+      _id,
+      price,
+      subtitle,
+      code,
+      number,
+      lineone,
+      linetwo,
+      "propstatus": status->name,
+      "imageUrl": bgImg.asset->url,
+    }`;
+    client.fetch(query).then((data)=>{
+      setSlides(data)
+    })
+  }, []);
+
+  
   return (
     <Swiper
     spaceBetween={0}
@@ -27,7 +48,7 @@ const Hero = () => {
     className='intro intro-carousel swiper position-relative'
     >
       {slides && slides.length > 0 && slides.map(slide=>(
-        <SwiperSlide key={slide.id}>
+        <SwiperSlide key={slide._id}>
           <HeroSlide slide={slide}/>
         </SwiperSlide>
       ))}

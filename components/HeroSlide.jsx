@@ -3,8 +3,9 @@
 import Link from "next/link";
 
 const HeroSlide = ({slide}) => {
+
   return (
-    <div className="carousel-item-a intro-item bg-image" style={{backgroundImage: `url(${slide.bgImg})`}}>
+    <div className="carousel-item-a intro-item bg-image" style={{backgroundImage: `url(${slide.imageUrl})`}}>
         <div className="overlay overlay-a"></div>
         <div className="intro-content display-table">
             <div className="table-cell">
@@ -17,13 +18,13 @@ const HeroSlide = ({slide}) => {
                                     <br/> {slide.code}
                                 </p>
                                 <h1 className="intro-title mb-4">
-                                    <span className="color-b">{slide.number}</span>{' '}{slide.lineOne}
-                                    <br/>{slide.lineTwo}
+                                    <span className="color-b">{slide.number}</span>{' '}{slide.lineone}
+                                    <br/>{slide.linetwo}
                                 </h1>
                                 <p className="intro-subtitle intro-price">
-                                    <Link href={`/properties/${slide.id}`}>
+                                    <Link href={`/properties/${slide._id}`}>
                                     <span className="price-a">
-                                    {slide.type} | ${slide.price.toLocaleString('en-us')}
+                                    {slide.propstatus} | zmk {slide.price.toLocaleString('en-us')}
                                     </span>
                                     </Link>
                                 </p>
