@@ -1,12 +1,15 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide} from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Autoplay, Pagination} from 'swiper/modules';
 import HeroSlide from './HeroSlide';
 import { client} from "@libs/sanity";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import required modules
+import {Autoplay, Pagination } from 'swiper/modules';
 import '@styles/hero.css';
 
 const Hero = () => {
@@ -33,6 +36,7 @@ const Hero = () => {
 
   
   return (
+    <>
     <Swiper
     spaceBetween={0}
     autoplay={{
@@ -53,6 +57,7 @@ const Hero = () => {
         </SwiperSlide>
       ))}
     </Swiper>
+    </>
   )
 }
 

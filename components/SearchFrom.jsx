@@ -1,6 +1,7 @@
 "use client";
-import '@styles/searchform.css';
+
 import { useState,useEffect } from 'react';
+import '@styles/searchform.css';
 
 const SearchFrom = () => {
 
