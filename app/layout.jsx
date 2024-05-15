@@ -4,6 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Poppins } from 'next/font/google';
 import Nav from '@components/Nav';
 import SearchFrom from '@components/SearchFrom';
+import Footer from '@components/Footer';
 
 const poppins = Poppins({
     subsets:['latin'],
@@ -25,6 +26,7 @@ const RootLayout= ({children})=>{
                     <SearchFrom/>
                     <Nav/>
                     {children}
+                    <Footer/>
                 </div>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
             </body>

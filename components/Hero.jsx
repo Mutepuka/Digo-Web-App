@@ -5,9 +5,9 @@ import { Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination} from 'swiper/modules';
-import '@styles/hero.css';
 import HeroSlide from './HeroSlide';
 import { client} from "@libs/sanity";
+import '@styles/hero.css';
 
 const Hero = () => {
 
