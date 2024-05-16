@@ -2,8 +2,8 @@
 # footer
 ========================*/
 .section-footer{
-    padding-top: 60px;
-    margin-top: 60px;
+    padding-top: 6rem;
+    margin-bottom: 6rem;
     background: #fff;
 }
 .section-footer ul{
@@ -17,6 +17,11 @@
 .section-footer .widget-a .w-title-a{
     margin-bottom: 1rem;
 }
+@media (max-width: 768px){
+    .w-title-a.text-brand{
+        font-size: 1.6rem !important
+    }
+}
 footer{
     background: #f3f3f3;
     text-align: center;
@@ -28,4 +33,10 @@ footer .copyright-footer{
 }
 footer .credits{
     font-size: 14px;
+}
+@media(max-width: 768px){
+    .section-footer{
+        padding-top: 4rem;
+        margin-bottom: 4rem;
+    }
 }

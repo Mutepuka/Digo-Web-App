@@ -76,7 +76,7 @@ a:hover{
 }
 .text-brand{
     color: #000;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 @media (min-width: 768px){
@@ -206,7 +206,7 @@ a:hover{
 .icon-box .icon-box-icon{
     display: table-cell;
     vertical-align: top;
-    font-size: 36px;
+    font-size: 20px;
     color: #000;
     width: 50px;
     padding-top: 8px;
@@ -221,7 +221,17 @@ a:hover{
 }
 @media(min-width: 768px){
     .section-t8{
-        padding-top: 4rem;
+        padding-top: 2rem;
+    }
+}
+@media(min-width: 640px){
+    .section-t8{
+        padding-top: 2rem;
+    }
+}
+@media(max-width: 640px){
+    .section-t8{
+        padding-top: 2rem;
     }
 }
 .section-t4{
@@ -257,11 +267,11 @@ a:hover{
 }
 .title-a{
     text-decoration: none;
-    font-size: 2.6rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 .title-link{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     padding-top: 1.2rem;
 }
@@ -536,16 +546,16 @@ a:hover{
 }
 .intro-single .title-single-box .title-single{
     font-weight: 600;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 @media(min-width: 768px){
     .intro-single .title-single-box .title-single{
-        font-size: 2.1rem;
+        font-size: 1.3rem;
     }
 }
 @media(min-width: 992px){
     .intro-single .title-single-box .title-single{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
 }

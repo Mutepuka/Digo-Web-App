@@ -16,11 +16,12 @@ const Services = () => {
             </div>
 
             <div className="row">
+
                 <div className="col-md-4">
                     <div className="card-box-c foo">
                         <div className="card-header-c d-flex">
                             <div className="card-box-ico">
-                                <span className="bi bi-cart"></span>
+                                <span className="bi bi-calendar4-week"></span>
                             </div>
                             <div className="card-title-c align-self-center">
                                 <h2 className="title-c">Lifestyle</h2>
