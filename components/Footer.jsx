@@ -114,7 +114,7 @@ const Footer = () => {
             <div className="copyright-footer">
               <p className="copyright color-text-a">
                 &copy;Copyright
-                <span className="color-a">DigoEstate</span> All Rights Reserverd
+                <span className="color-a"> DigoEstate</span> All Rights Reserverd
               </p>
             </div>
             <div className="credits">
