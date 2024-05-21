@@ -5,7 +5,7 @@ import Link from "next/link";
 const HeroSlide = ({slide}) => {
 
   return (
-    <div className="carousel-item-a intro-item bg-image" style={{backgroundImage: `url(${slide.imageUrl})`}}>
+    <div className="carousel-item-a intro-item bg-image" style={{backgroundImage: `url(${slide.bgImg})`}}>
         <div className="overlay overlay-a"></div>
         <div className="intro-content display-table">
             <div className="table-cell">
