@@ -1,0 +1,128 @@
+/*============================
+PROPERTIES CARD 
+*======================================*/
+@media(min-width: 768px){
+    .card-box-a:hover .card-overlay-a-content{
+        bottom: 60px;
+    }
+}
+@media (min-width: 768px) and (min-width: 768px){
+    .card-box-a:hover .card-overlay-a-content{
+        bottom: 60px;
+    }
+
+}
+@media (min-width: 768px) and (min-width: 992px){
+    .card-box-a:hover .card-overlay-a-content{
+        bottom: 60px;
+    }
+
+}
+@media(min-width: 768px){
+    .card-box-a:hover .card-body-a{
+        padding-bottom: 1rem;
+    }
+}
+@media(max-width: 768px){
+    .card-box-a:hover .card-body-a{
+        bottom: 65px;
+    }
+}
+.card-body-a .card-body-a{
+    padding-bottom: 1rem;
+}
+.card-overlay-a-content{
+    transition: all 0.5s ease-in;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+@media(min-width: 768px){
+    .card-overlay-a-content{
+        bottom: -20px;
+    }
+}
+@media(min-width: 992px){
+    .card-overlay-a-content{
+        bottom: 0px;
+    }
+}
+.card-header-a{
+    padding: 0 1rem;
+}
+.card-header-a .card-title-a{
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0.7rem;
+}
+@media(min-width: 768px){
+    .card-header-a .card-title-a{
+        font-size: 1.3rem;
+    }
+}
+@media(min-width: 992px){
+    .card-header-a .card-title-a{
+        font-size: 2rem;
+    }
+}
+.card-header-a .card-title-a a{
+    color: white;
+    text-decoration: none;
+}
+.card-body-a{
+    z-index: 2;
+    transition: all 0.5s ease-in;
+    padding: 0rem 1rem 2rem 1rem !important;
+}
+.card-body-a .price-box{
+    padding-bottom: 0.5rem;
+}
+.price-a{
+    color: white;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid #2eca6a;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.card-footer-a{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: #2eca6a;
+}
+.card-info{
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+}
+.card-info .card-info-title{
+    font-size: 1rem;
+    color: #313131;
+    font-weight: 600;
+}
+@media(min-width: 768px){
+    .card-info .card-info-title{
+        font-size: 0.9rem;
+    }
+}
+@media(min-width: 992px){
+    .card-info .card-info-title{
+        font-size: 1rem;
+    }
+}
+.card-info li span{
+    color: white;
+    font-size: 0.9rem;
+}
+@media(min-width: 768px){
+    .card-info li span{
+        font-size: 0.8rem;
+    }
+}
+@media(min-width: 992px){
+    .card-info li span{
+        font-size: 1rem;
+    }
+}
