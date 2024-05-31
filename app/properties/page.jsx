@@ -4,6 +4,8 @@ import {useState, useEffect} from 'react';
 import { client } from '@libs/sanity';
 import BreadCrumb from '@components/BreadCrumb';
 import '@styles/propertieslist.css';
+import PropertiesCard from '@components/PropertiesCard';
+import Pagination from '@components/Pagination';
 
 const Properties = () => {
 
@@ -52,6 +54,18 @@ const Properties = () => {
                             </select>
                         </form>
                     </div>
+                </div>
+                {properties && properties.length > 0 && properties.map(property=>(
+                    <div className="col-md-4" key={property._id}>
+                        <PropertiesCard data={property}/>
+                    </div>
+                    
+                ))}
+            </div>
+            <div className="row">
+                <div className="col-sm-12">
+                    <Pagination/>
+
                 </div>
             </div>
             </div> 

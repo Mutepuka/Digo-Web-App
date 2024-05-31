@@ -63,7 +63,7 @@ const Properties = () => {
                 clickable: true
             }}
             modules={{Autoplay, Pagination}}
-            loop={true}
+            loop={false}
             breakpoints={{
                 320:{
                     slidesPerView:1,

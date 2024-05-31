@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const PropertiesCard = ({data}) => {
 
-    console.log('this is the ', data.propstatus)
+    
   return (
     <div className='card-box-a card-shadow'>
         <div className="img-box-a">
