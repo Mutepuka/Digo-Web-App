@@ -12,8 +12,6 @@ import '@styles/hero.css';
 const Hero = () => {
 
   const [proslides, setProSlides] = useState(slides);
-
-  
   return (
     <>
     <Swiper

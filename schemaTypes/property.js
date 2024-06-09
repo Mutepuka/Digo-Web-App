@@ -82,5 +82,16 @@ export const property = defineType({
             title: 'Agent Name',
             to:[{type: 'agent'}]
         }),
+        defineField({
+            name: 'amenities',
+            type: 'array',
+            title: 'Amenities',
+            of:[{type: 'string'}]
+        }),
+        defineField({
+            name: 'videoUrl',
+            type: 'url',
+            title: 'Video Url',
+        }),
     ]
 })

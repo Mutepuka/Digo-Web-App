@@ -162,46 +162,47 @@ a:hover{
     top: 15px;
     left: 0px;
 }
-/****************** pagination **********/
-.paginaton-a{
+/****************** pagination-a **********/
+.pagination-a{
     text-decoration: none;
 }
-.paginaton-a .pagination .page-link{
+.pagination-a .pagination .page-link{
     margin: 0 0.2rem;
     border-color: transparent;
     padding: 0.5rem 0.8rem;
-    color: #000;
+    color: #000000;
 }
-.paginaton-a .pagination .page-link:hover,
-.paginaton-a .pagination .page-link:active, .paginaton-a .pagination .page-link:focus{
+.pagination-a .pagination .page-link:hover,.pagination-a .pagination .page-link:active,.pagination-a .pagination .page-link:focus{
     background-color: #2eca6a;
 }
-.paginaton-a .pagination .page-link span{
+.pagination-a .pagination .page-link span{
     font-size: 1.2rem;
 }
-.paginaton-a .pagination .next .page-link{
+.pagination-a .pagination .next .page-link{
     padding: 0.4rem 0.9rem;
+
 }
-.paginaton-a .pagination .page-item:last-child .page-link{
+.pagination-a .pagination .page-item:last-child .page-link{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.paginaton-a .pagination .page-item:first-child .page-link{
+.pagination-a .pagination .page-item:first-child .page-link{
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-.paginaton-a .pagination .page-item.disabled .page-link{
+.pagination-a .pagination .page-item.disabled .page-link{
     padding: 0.4rem 0.9rem;
-    color: #000;
+    color: #555555;
 }
-.paginaton-a .pagination .page-item.active .page-link{
-    color: #2eca6a;
+.pagination-a .pagination .page-item.active .page-link{
+    background-color: #2eca6a;
 }
 .a{
     text-decoration: none;
     color: #2eca6a;
     font-size: 1.3rem;
 }
+
 /*********** Icon Box ***********/
 .icon-box .icon-box-icon{
     display: table-cell;

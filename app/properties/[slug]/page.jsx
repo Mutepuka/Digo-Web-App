@@ -23,6 +23,8 @@ const SingleProperty = () => {
             const query = `*[_type == "property" && slug.current == "${slug}"][0]{
                 _id,
                   area,
+                  amenities,
+                  videoUrl,
                   addressOne,
                   addressTwo,
                   beds,
@@ -165,12 +167,80 @@ const SingleProperty = () => {
                         <strong>Satus:</strong>
                         <span>{property.propstatus}</span>
                         </li>
+                        <li className="d-flex justify-content-between">
+                        <strong>Area:</strong>
+                        <span>{property.area}m<sup>2</sup></span>
+                        </li>
+                        <li className="d-flex justify-content-between">
+                        <strong>Bedrooms:</strong>
+                        <span>{property.beds}</span>
+                        </li>
+                        <li className="d-flex justify-content-between">
+                        <strong>Bathrooms:</strong>
+                        <span>{property.baths}</span>
+                        </li>
+                        <li className="d-flex justify-content-between">
+                        <strong>Garages:</strong>
+                        <span>{property.garages}</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </div>
+                <div className="col-md-7 col-lg-7 section-md-t3">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <div className="title-box-d">
+                        <h3 className="title-d">Property Description</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="property-description">
+                    <p className="description color-text-a">{property.description}</p>
+                  </div>
+                  <div className="row section-t3">
+                    <div className="col-sm-12">
+                      <div className="title-box-d">
+                        <h3 className="title-d">Amenities</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="amenities-list color-text-a">
+                    <ul className="list-a no-margin">
+                      {property.amenities && property.amenities.length > 0 && property.amenities.map((item, index)=>(
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
 
+            </div>
+            <div className="col-md-10 offset-md-1">
+              <ul className="nav nav-pills-a nav-pills mb-3 section-t3" id='pills-tab' role='tablist'>
+                <li className="nav-item">
+                  <a href="#pills-video" className="nav-link active" id='pills-video-tab' data-bs-toggle="pill" aria-controls='pills-video' aria-selected="true">Video</a>
+                </li>
+
+                <li className="nav-item">
+                  <a href="#pills-plans" className="nav-link" 
+                  id='pills-plans-tab' data-bs-toggle="pill" aria-controls='pills-plans' aria-selected="false">Floor Plans</a>
+                </li>
+
+              </ul>
+              <div className="tab-content" id='pill-tabContent'>
+                <div className="tab-pane fade show active" id='pills-video' role='tabpanel' aria-labelledby='pills-video-tab'>
+                  <iframe
+                  src={property.videoUrl}
+                  width="100%"
+                  height="460"
+                  frameBorder="0"
+                  webkitAllowFullscreen
+                  mozAllowFullscreen
+                  allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,67 @@
+/*=======/ SINGLE PROPERTY /=========*/
+.gallery-property {
+    margin-bottom: 3rem;
+}
+.property-price {
+    margin: 0 auto;
+}
+.property-price .card-header-c{
+    padding: 0;
+}
+.summary-list {
+    padding-right: 1rem;
+    color: #000000;
+}
+.summary-list .list {
+    padding: 0;
+    line-height: 2;
+}
+.summary-list .list span {
+    color: #555555;
+}
+.card-box-ico {
+    padding: 1rem 3rem 1rem 2.5rem;
+    border: 2px solid #2eca6a;
+}
+.card-box-ico span {
+    font-size: 2rem;
+    color: #000000;
+}
+.title-c {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: -40px;
+}
+.carousel-item-b img {
+    width: 100%;
+}
+@media (min-width: 768px){
+    .title-c{
+        font-size: 0.9rem;
+    }
+}
+@media (min-width: 992px){
+    .title-c{
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 768px){
+    .property-agent{
+        margin-top: 2.5rem;
+    }
+}
+.property-agent .title-agent{
+    font-weight: 600;
+}
+.property-agent ul {
+    line-height: 2;
+    color: #000000;
+}
+.property-agent .socails-a{
+    text-align: center;
+}
+@media (max-width: 991px){
+    .property-contact {
+        margin-top: 2.5rem;
+    }
+}
