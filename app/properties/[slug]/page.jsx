@@ -4,11 +4,6 @@ import { client, urlFor } from '@libs/sanity';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {useState, useEffect} from 'react';
-
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import {Autoplay, Pagination } from 'swiper/modules';
-// import 'swiper/css';
-// import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -42,7 +37,8 @@ const SingleProperty = () => {
                   "slug": slug.current,
                   "propstatus": status->name,
                   garages,
-                "imageUrl": images[0].asset->url
+                "imageUrl": images[0].asset->url,
+                images
                 }`;
                 const data = await client.fetch(query);
                 setProperty(data)
@@ -66,6 +62,7 @@ const SingleProperty = () => {
         </div>
       )
     }
+    
     
   return (
     <main id="main">
@@ -108,27 +105,34 @@ const SingleProperty = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <Swiper
-              speed={600}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false
-              }}
+              // speed={600}
+              // autoplay={{
+              //   delay: 5000,
+              //   disableOnInteraction: false
+              // }}
+              // pagination={{
+              //   el: '.property-single-carousel-pagination',
+              //   type: 'bullets',
+              //   clickable: true,
+              //   dynamicBullets: true
+              // }}
+              // modules={{Autoplay, Pagination}}
+              // loop={true}
+              // className='mySwiper'
               pagination={{
-                el: '.property-single-carousel-pagination',
-                type: 'bullets',
-                clickable: true
+                dynamicBullets: true,
+                clickable: true,
+                type: 'bullets'
               }}
-              modules={{Autoplay, Pagination}}
-              loop={true}
-              className='swiper'
+              modules={[Pagination]}
+              className="intro swiper"
           
               >
-                <SwiperSlide className='carousel-item-b'>
-                  <img src={urlFor(property.imageUrl)} alt="" className="img-fluid" />
-                </SwiperSlide>
-                <SwiperSlide className='carousel-item-b'>
-                  <img src={urlFor(property.imageUrl)} alt="" className="img-fluid" />
-                </SwiperSlide>
+                {property.images && property.images.length > 0 && property.images.map(image=>(
+                  <SwiperSlide key={image._id} className='carousel-item-b'>
+                    <img src={urlFor(image)} alt='property image' className='img-fluid' />
+                  </SwiperSlide>
+                ))}
                 <div className="property-single-carousel-pagination carousel-pagination"></div>
               </Swiper>
             </div>
