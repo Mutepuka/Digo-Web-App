@@ -2,11 +2,19 @@
 
 import { useState} from 'react';
 import HeroSlide from './HeroSlide';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import {Autoplay, Pagination } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import {Autoplay, Pagination } from 'swiper/modules';
 import slides from '../data/slides';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+// import required modules
+import { Pagination } from 'swiper/modules';
 import '@styles/hero.css';
 
 const Hero = () => {
@@ -14,7 +22,7 @@ const Hero = () => {
   const [proslides, setProSlides] = useState(slides);
   return (
     <>
-    <Swiper
+    {/* <Swiper
     spaceBetween={0}
     autoplay={{
       delay: 5000,
@@ -33,7 +41,21 @@ const Hero = () => {
           <HeroSlide slide={slide}/>
         </SwiperSlide>
       ))}
-    </Swiper>
+    </Swiper> */}
+    <Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="intro"
+      >
+        {proslides && proslides.length > 0 && proslides.map(slide=>(
+        <SwiperSlide key={slide._id}>
+          <HeroSlide slide={slide}/>
+        </SwiperSlide>
+      ))}
+        
+      </Swiper>
     </>
   )
 }
