@@ -72,7 +72,6 @@
 .intro{
     height: 100vh;
     position: relative;
-    color: #fff;
     margin-bottom: 3rem;
 }
 .intro .swiper-pagination .swiper-pagination-bullet{
