@@ -4,10 +4,18 @@ import {useState,useEffect} from 'react';
 import PropertiesCard from './PropertiesCard';
 import { client } from '@libs/sanity';
 import Link from 'next/link';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import {Autoplay, Pagination } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {Autoplay, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+// import required modules
+import {Autoplay, Pagination } from 'swiper/modules';
 
 const Properties = () => {
 
@@ -52,29 +60,45 @@ const Properties = () => {
                 </div>
             </div>
             <Swiper
-            slidesPerView={'auto'}
-            speed={600}
-            autoplay={{
-                delay:5000,
-                disableOnInteraction: false
-            }}
+            // slidesPerView={'auto'}
+            // speed={600}
+            // autoplay={{
+            //     delay:5000,
+            //     disableOnInteraction: false
+            // }}
+            // pagination={{
+            //     el: 'property-carousel-pagination',
+            //     type: 'bullets',
+            //     clickable: true
+            // }}
+            // modules={{Autoplay, Pagination}}
+            // loop={false}
+            // breakpoints={{
+            //     320:{
+            //         slidesPerView:1,
+            //         spaceBetween: 20
+            //     },
+            //     1200: {
+            //         slidesPerView: 3,
+            //         spaceBetween: 20
+            //     }
+            // }}
             pagination={{
-                el: 'property-carousel-pagination',
+                dynamicBullets: true,
                 type: 'bullets',
                 clickable: true
-            }}
-            modules={{Autoplay, Pagination}}
-            loop={false}
-            breakpoints={{
+              }}
+              breakpoints={{
                 320:{
-                    slidesPerView:1,
+                    slidesPerView: 1,
                     spaceBetween: 20
                 },
-                1200: {
+                1200:{
                     slidesPerView: 3,
                     spaceBetween: 20
                 }
-            }}
+              }}
+              modules={[Pagination]}
             className='swiper'
             >
                 {properties && properties.length > 0 && properties.map(data=>(
@@ -85,9 +109,6 @@ const Properties = () => {
                 
 
             </Swiper>
-            
-        
-
         </div>
     </section>
    

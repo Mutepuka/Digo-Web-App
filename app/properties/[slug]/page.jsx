@@ -5,10 +5,17 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {useState, useEffect} from 'react';
 
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import {Autoplay, Pagination } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {Autoplay, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+// import required modules
+import {Autoplay, Pagination } from 'swiper/modules';
 import '@styles/singleproperty.css';
 
 const SingleProperty = () => {
