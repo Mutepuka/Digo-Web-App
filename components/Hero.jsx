@@ -47,7 +47,7 @@ const Hero = () => {
           dynamicBullets: true,
         }}
         modules={[Pagination]}
-        className="intro"
+        className="intro intro-carousel swiper position-relative"
       >
         {proslides && proslides.length > 0 && proslides.map(slide=>(
         <SwiperSlide key={slide._id}>
