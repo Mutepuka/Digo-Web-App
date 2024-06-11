@@ -16,20 +16,23 @@ const poppins = Poppins({
 
 export const metadata={
     title: 'Digo',
-    description: 'Real Estate Adversting Platforms'
+    description: 'Real Estate Adversting Platforms',
+    icons:{
+        icon:'/assets/images/slide-1.jpg'
+    }
 }
 
 const RootLayout= ({children})=>{
     return(
         <html lang='en'>
-            <body className={poppins.className}>
+            <body className={poppins.variable}>
                 <div className='app'>
                     <SearchFrom/>
                     <Nav/>
                     {children}
                     <Footer/>
                 </div>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
             </body>
         </html>
     )
