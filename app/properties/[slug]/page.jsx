@@ -125,7 +125,7 @@ const SingleProperty = () => {
                 type: 'bullets'
               }}
               modules={[Pagination]}
-              className="swiper"
+              className="intro swiper"
           
               >
                 {property.images && property.images.length > 0 && property.images.map(image=>(
