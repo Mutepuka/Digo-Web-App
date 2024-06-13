@@ -12,25 +12,25 @@ import { client } from '@libs/sanity';
 
 const Hero = () => {
 
-  const [proslides, setProSlides] = useState([]);
+  const [proslides, setProSlides] = useState(slides);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const query = `*[_type == "slides"]{
-    _id,
-    code,
-    lineone,
-    linetwo,
-    number,
-    price,
-    "slug": slug.current,
-    "imageUrl": bgImg.asset->url
-    }`;
-    client.fetch(query).then(data=>{
-      setProSlides(data)
-    })
+  //   const query = `*[_type == "slides"]{
+  //   _id,
+  //   code,
+  //   lineone,
+  //   linetwo,
+  //   number,
+  //   price,
+  //   "slug": slug.current,
+  //   "imageUrl": bgImg.asset->url
+  //   }`;
+  //   client.fetch(query).then(data=>{
+  //     setProSlides(data)
+  //   })
     
-  }, [])
+  // }, [])
   
 
   return (
