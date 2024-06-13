@@ -25,7 +25,7 @@ export const metadata={
 const RootLayout= ({children})=>{
     return(
         <html lang='en'>
-            <body className={poppins.variable}>
+            <body className={poppins.className}>
                 <div className='app'>
                     <SearchFrom/>
                     <Nav/>
