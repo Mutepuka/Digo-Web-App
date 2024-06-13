@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
-import '@styles/test.css';
+// import '@styles/test.css';
 
 const About = () => {
   return (
