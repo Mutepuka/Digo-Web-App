@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 const HeroSlide = ({slide}) => {
+    console.log('gb image', slide.imageUrl)
 
   return (
     <div className="carousel-item-a intro-item bg-image" style={{backgroundImage:`url(${slide.bgImg})`}}>
