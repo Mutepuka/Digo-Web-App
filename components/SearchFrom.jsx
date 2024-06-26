@@ -8,6 +8,15 @@ import { useRouter } from 'next/navigation';
 const SearchFrom = () => {
 
     const route = useRouter();
+     //get all data
+    // const [data, setData] = useState([]);
+     const [searchQuery, setSearchQuery] = useState('');
+     const [status, setStatus] = useState('');
+     const [bedrooms, setBedrooms] = useState('');
+     const [cities, setCities] = useState('');
+     const [bathrooms, setBathrooms] = useState('');
+     const [garages, setGarages] = useState('');
+     const [price, setPrice] = useState('');
 
     const hanldeSearchClose=()=>{
         document.body.classList.remove('box-collapse-open');
@@ -21,41 +30,47 @@ const SearchFrom = () => {
     const handleStatusFilterChange = (event)=>{
         setStatus(event.target.value)
     }
+    const handleCitiesFileterChange = (event)=>{
+        setCities(event.target.value)
+    }
+    const handleBedroomsFilterChange = (event)=>{
+        setBedrooms(event.target.value)
+    }
+    const handleBathroomsFitlerChange = (event)=>{
+        setBathrooms(event.target.value)
+    }
+    const handleGaragesFilterChange = (event)=>{
+        setGarages(event.target.value)
+    }
+    const handlePriceFilterChange = (event)=>{
+        setPrice(event.target.value)
+    }
 
     const hanldeSearchQuery = (e)=>{
         e.preventDefault();
         //navigate the user to the properties page
        route.push(`/properties?keyword=${searchQuery}&propertyStatus=${status}`)
-        console.log('this is the status',status);
-        console.log('this is the search query',searchQuery)
+        
     }
 
-    //get all data
-    const [data, setData] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [status, setStatus] = useState('');
-    const [bedrooms, setBedrooms] = useState('');
-    const [cities, setCities] = useState('');
-    const [bathrooms, setBathrooms] = useState('');
-    const [garages, setGarages] = useState('');
-    const [price, setPrice] = useState('');
+   
 
-    const getAllData = async()=>{
+    // const getAllData = async()=>{
 
-        try {
-            const query = `*[_type == "property"]`;
-            const data = await client.fetch(query);
-            setData(data);
-            console.log(data)
-        } catch (error) {
-            console.log('error in fetching',error)
-        }
+    //     try {
+    //         const query = `*[_type == "property"]`;
+    //         const data = await client.fetch(query);
+    //         setData(data);
+    //         console.log(data)
+    //     } catch (error) {
+    //         console.log('error in fetching',error)
+    //     }
 
-    }
+    // }
 
-    useEffect(() => {
-      getAllData()
-    }, [])
+    // useEffect(() => {
+    //   getAllData()
+    // }, [])
     
   return (
     <>
@@ -96,7 +111,7 @@ const SearchFrom = () => {
                     <div className="col-md-6 mb-2">
                         <div className="form-group mt-3">
                             <label htmlFor="city" className="pb-2">City</label>
-                            <select className="form-control form-select form-control-a" id="city">
+                            <select className="form-control form-select form-control-a" id="city" value={cities} onChange={handleCitiesFileterChange}>
                                 <option>All Cities</option>
                                 <option>Lusaka</option>
                                 <option>CopperBelt</option>
@@ -106,7 +121,7 @@ const SearchFrom = () => {
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="bedrooms" className="pb-2">Bedrooms</label>
-                            <select className="form-control form-select form-control-a" id="bedrooms">
+                            <select className="form-control form-select form-control-a" id="bedrooms" value={bedrooms} onChange={handleBedroomsFilterChange}>
                                 <option>All</option>
                                 <option>01</option>
                                 <option>02</option>
@@ -117,7 +132,7 @@ const SearchFrom = () => {
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="garage" className="pb-2">Garages</label>
-                            <select className="form-control form-select form-control-a" id="garages">
+                            <select className="form-control form-select form-control-a" id="garages" value={garages} onChange={handleGaragesFilterChange}>
                                 <option>All</option>
                                 <option>01</option>
                                 <option>02</option>
@@ -128,7 +143,7 @@ const SearchFrom = () => {
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="bathrooms" className="pb-2">Bathrooms</label>
-                            <select className="form-control form-select form-control-a" id="bathrooms">
+                            <select className="form-control form-select form-control-a" id="bathrooms" value={bathrooms} onChange={handleBathroomsFitlerChange}>
                                 <option>All</option>
                                 <option>01</option>
                                 <option>02</option>
@@ -139,7 +154,7 @@ const SearchFrom = () => {
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="price" className="pb-2">Price</label>
-                            <select className="form-control form-select form-control-a" id="price">
+                            <select className="form-control form-select form-control-a" id="price" value={price} onChange={handlePriceFilterChange}>
                                 <option>All</option>
                                 <option>zmk4,000</option>
                                 <option>zmk6,000</option>

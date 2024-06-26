@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {useState, useEffect} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useSearchParams } from 'next/navigation';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -42,6 +43,7 @@ const SingleProperty = () => {
                 }`;
                 const data = await client.fetch(query);
                 setProperty(data)
+                
             
         } catch (error) {
             console.log('error in fetching data', error)
