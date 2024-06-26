@@ -2,14 +2,61 @@
 
 import { useState,useEffect } from 'react';
 import '@styles/searchform.css';
+import { client } from '@libs/sanity';
+import { useRouter } from 'next/navigation';
 
 const SearchFrom = () => {
+
+    const route = useRouter();
 
     const hanldeSearchClose=()=>{
         document.body.classList.remove('box-collapse-open');
         document.body.classList.add('box-collapse-close');
 
     }
+
+    const hanldeSearchQueryChange =(event)=>{
+        setSearchQuery(event.target.value);
+    }
+    const handleStatusFilterChange = (event)=>{
+        setStatus(event.target.value)
+    }
+
+    const hanldeSearchQuery = (e)=>{
+        e.preventDefault();
+        //navigate the user to the properties page
+       route.push(`/properties?keyword=${searchQuery}&propertyStatus=${status}`)
+        console.log('this is the status',status);
+        console.log('this is the search query',searchQuery)
+    }
+
+    //get all data
+    const [data, setData] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [status, setStatus] = useState('');
+    const [bedrooms, setBedrooms] = useState('');
+    const [cities, setCities] = useState('');
+    const [bathrooms, setBathrooms] = useState('');
+    const [garages, setGarages] = useState('');
+    const [price, setPrice] = useState('');
+
+    const getAllData = async()=>{
+
+        try {
+            const query = `*[_type == "property"]`;
+            const data = await client.fetch(query);
+            setData(data);
+            console.log(data)
+        } catch (error) {
+            console.log('error in fetching',error)
+        }
+
+    }
+
+    useEffect(() => {
+      getAllData()
+    }, [])
+    
   return (
     <>
     <div className="click-closed"></div>
@@ -28,7 +75,10 @@ const SearchFrom = () => {
                             <label className="pb-2" htmlFor="Type">Keyboard</label>
                             <input
                             type="text"
-                            placeholder="keyboard"
+                            placeholder="keyword"
+                            id='keyword'
+                            value={searchQuery}
+                            onChange={hanldeSearchQueryChange}
                             className="form-control form-control-lg form-control-a" 
                             />
                         </div>
@@ -36,7 +86,7 @@ const SearchFrom = () => {
                     <div className="col-md-6 mb-2">
                         <div className="form-group mt-3">
                             <label className="pb-2" htmlFor="Type">type</label>
-                            <select className="form-control form-select form-control-a" id="Type">
+                            <select className="form-control form-select form-control-a" id="Type" value={status} onChange={handleStatusFilterChange}>
                                 <option>All</option>
                                 <option>For Rent</option>
                                 <option>For Sale</option>
@@ -97,7 +147,7 @@ const SearchFrom = () => {
                         </div>
                     </div>
                     <div className='col-md-12'>
-                        <button type='submit' className='btn btn-b'>
+                        <button type='submit' className='btn btn-b' onClick={hanldeSearchQuery}>
                             Search Property
                         </button>
                     </div>
