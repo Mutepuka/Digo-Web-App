@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import BreadCrumb from '@components/BreadCrumb';
-import '@styles/propertieslist.css';
 import { client } from '@libs/sanity';
 import useSWR from 'swr';
+import PropertiesCard from '@components/PropertiesCard';
+import '@styles/propertieslist.css';
 
 const fetchAllProperties = async () => {
   const query = `*[_type == "property"]{
@@ -30,12 +31,14 @@ const fetchAllProperties = async () => {
   return data;
 };
 
+
 const SearchResults = () => {
   const [allProperties, setAllProperties] = useState([]);
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [status, setStatus] = useState('');
   const searchParams = useSearchParams();
+
 
   const { data, error, isLoading } = useSWR('allProperties', fetchAllProperties, {
     onSuccess: (data) => setAllProperties(data),
@@ -93,26 +96,36 @@ const SearchResults = () => {
                     <form>
                         <select className="custom-select">
                             <option selected>All</option>
-                            <option value="1">For Rent</option>
-                            <option value="2">For Sale</option>
+                            <option value="1">Rent</option>
+                            <option value="2">Sale</option>
                         </select>
                     </form>
+                    </div>
+                </div>
+                {filteredProperties.map(property => (
+                  <div className="col-md-4" key={property._id}>
+                    <PropertiesCard data={property} />
+                  </div>
+                ))}
+            </div>
+            <div className="row">
+                <div className="col-sm-12">
                 </div>
             </div>
-            
-        </div>
-        <div className="row">
-            <div className="col-sm-12">
-                
-
-            </div>
-        </div>
-        </div> 
-        </section>
-    
+      </div> 
+  </section>
 </main>
 
   );
 };
 
-export default SearchResults;
+const SearchedProperties = ()=>{
+  return(
+    <Suspense fallback={<div></div>}>
+    <SearchResults/>
+  </Suspense>
+
+  ) 
+}
+
+export default SearchedProperties;

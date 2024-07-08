@@ -1,33 +1,17 @@
 "use client";
 
-import {useState, useEffect, Suspense} from 'react';
+import {useState, useEffect} from 'react';
 import { client } from '@libs/sanity';
-import { useSearchParams } from 'next/navigation';
 import BreadCrumb from '@components/BreadCrumb';
-import '@styles/propertieslist.css';
 import PropertiesCard from '@components/PropertiesCard';
 import Pagination from '@components/Pagination';
+import '@styles/propertieslist.css';
 
-const PropertiesContent = () => {
+const Properties = () => {
+
     const [properties, setProperties] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [status, setStatus] = useState('');
-    const [bedrooms, setBedrooms] = useState('');
-    const [cities, setCities] = useState('');
-    const [bathrooms, setBathrooms] = useState('');
-    const [garages, setGarages] = useState('');
-    const [price, setPrice] = useState('');
-
-    const searchParams = useSearchParams()
 
     useEffect(() => {
-        const searchKeyword = searchParams.get('keyword');
-        const propertyStatus = searchParams.get('propertyStatus');
-
-        //set the state variable
-        if (searchKeyword) setSearchQuery(searchKeyword);
-        if (propertyStatus) setStatus(propertyStatus);
-
         const query = `*[_type == 'property'][0...8]|
         order(_createdAt desc){
         _id,
@@ -45,11 +29,8 @@ const PropertiesContent = () => {
         client.fetch(query).then((data)=>{
             setProperties(data)
         });
-
-        console.log('search keyword', searchKeyword)
-        console.log('property status', propertyStatus)
       
-    }, [searchParams]);
+    }, []);
     
   return (
     <main id="main">
@@ -60,6 +41,7 @@ const PropertiesContent = () => {
         />
 
         <section className="property-grid grid">
+
            <div className="container">
             <div className="row">
                 <div className="col-sm-12">
@@ -88,14 +70,9 @@ const PropertiesContent = () => {
             </div>
             </div> 
         </section>
+
     </main>
   )
 }
 
-const Properties = () => (
-  <Suspense fallback={<div>Loading...</div>}>
-    <PropertiesContent />
-  </Suspense>
-);
-
-export default Properties;
+export default Properties
