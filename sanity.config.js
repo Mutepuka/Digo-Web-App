@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'Digo Estate',
+  title: 'digo-estate',
 
   projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_DATASET,

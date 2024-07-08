@@ -83,6 +83,12 @@ export const property = defineType({
             to:[{type: 'agent'}]
         }),
         defineField({
+            name: 'provincename',
+            type: 'reference',
+            title: 'Province Name',
+            to:[{type: 'provincename'}]
+        }),
+        defineField({
             name: 'amenities',
             type: 'array',
             title: 'Amenities',

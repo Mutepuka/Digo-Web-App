@@ -3,4 +3,5 @@ import { slides } from "./slides";
 import { property } from "./property";
 import { agent } from "./agent";
 import { propertytype } from "./propertytype";
-export const schemaTypes = [agent, propertytype, property, status, slides]
+import { provincename } from "./provincename";
+export const schemaTypes = [agent, propertytype, property, provincename, status, slides]
