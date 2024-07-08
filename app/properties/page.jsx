@@ -1,6 +1,6 @@
 "use client";
 
-import {useState, useEffect} from 'react';
+import {useState, useEffect, Suspense} from 'react';
 import { client } from '@libs/sanity';
 import { useSearchParams } from 'next/navigation';
 import BreadCrumb from '@components/BreadCrumb';
@@ -8,8 +8,7 @@ import '@styles/propertieslist.css';
 import PropertiesCard from '@components/PropertiesCard';
 import Pagination from '@components/Pagination';
 
-const Properties = () => {
-
+const PropertiesContent = () => {
     const [properties, setProperties] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [status, setStatus] = useState('');
@@ -22,7 +21,7 @@ const Properties = () => {
     const searchParams = useSearchParams()
 
     useEffect(() => {
-        const searchKeyword = searchParams.get('keyword')
+        const searchKeyword = searchParams.get('keyword');
         const propertyStatus = searchParams.get('propertyStatus');
 
         //set the state variable
@@ -50,7 +49,7 @@ const Properties = () => {
         console.log('search keyword', searchKeyword)
         console.log('property status', propertyStatus)
       
-    }, []);
+    }, [searchParams]);
     
   return (
     <main id="main">
@@ -61,7 +60,6 @@ const Properties = () => {
         />
 
         <section className="property-grid grid">
-
            <div className="container">
             <div className="row">
                 <div className="col-sm-12">
@@ -90,9 +88,14 @@ const Properties = () => {
             </div>
             </div> 
         </section>
-
     </main>
   )
 }
 
-export default Properties
+const Properties = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <PropertiesContent />
+  </Suspense>
+);
+
+export default Properties;
