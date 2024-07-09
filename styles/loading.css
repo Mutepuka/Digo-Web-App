@@ -1,0 +1,51 @@
+/* styles.css */
+.flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .h-screen {
+    height: 100vh;
+  }
+  
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .h-16 {
+    height: 4rem;
+  }
+  
+  .w-16 {
+    width: 4rem;
+  }
+  
+  .border-t-2 {
+    border-top-width: 2px;
+  }
+  
+  .border-b-2 {
+    border-bottom-width: 2px;
+  }
+  
+  .border-gray-900 {
+    border-color: #1a202c; /* Adjust the color if needed */
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

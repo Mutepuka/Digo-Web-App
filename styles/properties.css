@@ -137,6 +137,12 @@ PROPERTIES CARD
 }
 @media(min-width: 687px){
     .img-box-a{
+        height: 70vh;
+
+    }
+}
+@media(min-width: 540px){
+    .img-box-a{
         height: 50vh;
 
     }
