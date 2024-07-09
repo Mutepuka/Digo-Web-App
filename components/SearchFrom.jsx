@@ -63,8 +63,8 @@ const SearchFrom = () => {
                             <label className="pb-2" htmlFor="Type">type</label>
                             <select className="form-control form-select form-control-a" id="Type" value={status} onChange={(e) => setStatus(e.target.value)}>
                                 <option>All</option>
-                                <option>For Rent</option>
-                                <option>For Sale</option>
+                                <option>Rent</option>
+                                <option>Sale</option>
                             </select>
                         </div>
                     </div>
@@ -114,11 +114,14 @@ const SearchFrom = () => {
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="price" className="pb-2">Price</label>
-                            <select className="form-control form-select form-control-a" id="price" value={price} onChange={(e) => setPrice(e.target.value)}>
-                                <option>All</option>
-                                <option>zmk4,000</option>
-                                <option>zmk6,000</option>
-                            </select>
+                            <input
+                            type='text'
+                            placeholder='Enter price'
+                             className="form-control form-control-a"
+                            id="price" 
+                            value={price} 
+                            onChange={(e) => setPrice(e.target.value)}
+                              />
                         </div>
                     </div>
                     <div className='col-md-12'>
