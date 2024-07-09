@@ -46,13 +46,17 @@ const Properties = () => {
             <div className="row">
                 <div className="col-sm-12">
                     <div className="grid-option">
-                        <form>
+                        
                             <select className="custom-select">
                                 <option selected>All</option>
-                                <option value="1">For Rent</option>
-                                <option value="2">For Sale</option>
+                                <option value="1">Houses</option>
+                                <option value="2">Apartments</option>
+                                <option value="3">Shops</option>
+                                <option value="4">Bording House</option>
+                                <option value="5">WareHouse</option>
+                                <option value="6">Farm Land</option>
                             </select>
-                        </form>
+                        
                     </div>
                 </div>
                 {properties && properties.length > 0 && properties.map(property=>(

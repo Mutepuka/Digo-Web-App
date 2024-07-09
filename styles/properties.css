@@ -126,3 +126,18 @@ PROPERTIES CARD
         font-size: 1rem;
     }
 }
+.img-box-a{
+    height: 70vh;
+}
+.img-box-a img{
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+  background-size: contain;
+}
+@media(min-width: 687px){
+    .img-box-a{
+        height: 50vh;
+
+    }
+}

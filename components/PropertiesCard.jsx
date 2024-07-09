@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 import { urlFor } from '@libs/sanity';
 import '@styles/properties.css';
-import Image from 'next/image';
 
 const PropertiesCard = ({data}) => {
 
