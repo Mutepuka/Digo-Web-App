@@ -93,13 +93,11 @@ const SearchResults = () => {
         <div className="row">
             <div className="col-sm-12">
                 <div className="grid-option">
-                    <form>
                         <select className="custom-select">
                             <option selected>All</option>
                             <option value="1">Rent</option>
                             <option value="2">Sale</option>
                         </select>
-                    </form>
                     </div>
                 </div>
                 {filteredProperties.map(property => (

@@ -23,10 +23,12 @@ const SearchFrom = () => {
         document.body.classList.add('box-collapse-close');
 
     }
-    const hanldeSearchQuery = (e)=>{
-        e.preventDefault();
+    const hanldeSearchQuery = ()=>{
+        
         //navigate the user to the properties page
-       route.push(`/properties/search?keyword=${searchQuery}&propertyStatus=${status}`)
+       route.push(`/properties/search?keyword=${searchQuery}&propertyStatus=${status}`);
+       document.body.classList.remove('box-collapse-open');
+       document.body.classList.add('box-collapse-close');
         
     }
     
@@ -41,7 +43,7 @@ const SearchFrom = () => {
 
         </span>
         <div className="box-collapse-wrap form">
-            <form className="form-a">
+            <div className="form-a">
                 <div className="row">
                     <div className="col-md-12 mb-2">
                         <div className="form-group">
@@ -125,7 +127,7 @@ const SearchFrom = () => {
                         </button>
                     </div>
                 </div>
-            </form>
+            </div>
 
         </div>
     </div>
