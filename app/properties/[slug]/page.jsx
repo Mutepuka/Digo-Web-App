@@ -25,6 +25,18 @@ const SingleProperty = () => {
         try {
             const query = `*[_type == "property" && slug.current == "${slug}"][0]{
                 _id,
+                agent->{
+                _id,
+                name,
+                image,
+                phone,
+                email,
+                description,
+                tagname,
+                facebook,
+                twitter,
+                linkedin
+                },
                   area,
                   amenities,
                   videoUrl,
@@ -40,7 +52,8 @@ const SingleProperty = () => {
                   "propstatus": status->name,
                   garages,
                 "imageUrl": images[0].asset->url,
-                images
+                images,
+                "province": provincename->name,
                 }`;
                 const data = await client.fetch(query);
                 setProperty(data)
@@ -77,7 +90,7 @@ const SingleProperty = () => {
                 <h1 className="title-single">
                   {property.addressOne}{' '}{property.addressTwo}
                 </h1>
-                <span className="color-text-a">{property.location}</span>
+                <span className="color-text-a">{property.province}</span>
               </div>
             </div>
             <div className="col-md-12 col-lg-4">
@@ -157,7 +170,7 @@ const SingleProperty = () => {
                         </li>
                         <li className="d-flex justify-content-between">
                         <strong>Location:</strong>
-                        <span>{property.location}</span>
+                        <span>{property.province}</span>
                         </li>
                         <li className="d-flex justify-content-between">
                         <strong>Property Type:</strong>
@@ -239,6 +252,80 @@ const SingleProperty = () => {
                   mozAllowFullscreen
                   allowFullScreen
                   ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/**agent information */}
+            <div className="col-md-12">
+              <div className="row section-t3">
+                <div className="col-sm-12">
+                  <div className="title-box-d">
+                    <h3 className="title-d">Contact Agent</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6 col-lg-4">
+                  <img src={urlFor(property.agent.image)} className='img-fluid' alt='agent image'/>
+                </div>
+                <div className="col-md-6 col-lg-4">
+                  <div className="property-agent">
+                    <h4 className="title-agent">{property.agent.name}</h4>
+                    <p className="color-text-a">{property.agent.description}</p>
+                    <ul className="list-unstyled">
+                      <li className="d-flex justify-content-between">
+                        <strong>Phone</strong>
+                        <span className="color-text-a">{property.agent.phone}</span>
+                      </li>
+                      <li className="d-flex justify-content-between">
+                        <strong>Email</strong>
+                        <span className="color-text-a">{property.agent.email}</span>
+                      </li>
+                      <li className="d-flex justify-content-between">
+                        <strong>Tagname</strong>
+                        <span className="color-text-a">{property.agent.tagname}</span>
+                      </li>
+                    </ul>
+                    <div className="socials-a">
+                      <ul className="list-inline">
+                        <li className="list-inline-item">
+                          <a href='#'>
+                            <i className="bi bi-facebook" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li className="list-inline-item">
+                          <a href='#'>
+                            <i className="bi bi-twitter" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li className="list-inline-item">
+                          <a href='#'>
+                            <i className="bi bi-linkedin" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                {/**contact form */}
+                <div className="col-md-12 col-lg-4">
+                  <div className="property-contact">
+                    <div className="form-a">
+                      <div className="row">
+                        <div className="col-md-12 mb-1">
+                          <div className="form-group">
+                            <input 
+                            type="text" 
+                            id='inputName'
+                            placeholder='Name *'
+                            required
+                            className="form-control form-control-lg form-control-a" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
