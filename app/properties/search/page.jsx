@@ -16,6 +16,7 @@ const fetchAllProperties = async () => {
     videoUrl,
     addressOne,
     addressTwo,
+    description,
     beds,
     baths,
     price,

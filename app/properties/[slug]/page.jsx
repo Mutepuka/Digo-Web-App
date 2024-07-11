@@ -30,6 +30,7 @@ const SingleProperty = () => {
                   videoUrl,
                   addressOne,
                   addressTwo,
+                  description,
                   beds,
                   baths,
                   price,
@@ -107,20 +108,6 @@ const SingleProperty = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <Swiper
-              // speed={600}
-              // autoplay={{
-              //   delay: 5000,
-              //   disableOnInteraction: false
-              // }}
-              // pagination={{
-              //   el: '.property-single-carousel-pagination',
-              //   type: 'bullets',
-              //   clickable: true,
-              //   dynamicBullets: true
-              // }}
-              // modules={{Autoplay, Pagination}}
-              // loop={true}
-              // className='mySwiper'
               pagination={{
                 dynamicBullets: true,
                 clickable: true,
@@ -165,8 +152,8 @@ const SingleProperty = () => {
                     <div className="summary-list">
                       <ul className="list">
                         <li className="d-flex justify-content-between">
-                        <strong>Property ID:</strong>
-                        <span>{property._id}</span>
+                        {/* <strong>Property ID:</strong>
+                        <span>{property._id}</span> */}
                         </li>
                         <li className="d-flex justify-content-between">
                         <strong>Location:</strong>
