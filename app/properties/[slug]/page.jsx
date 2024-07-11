@@ -323,6 +323,34 @@ const SingleProperty = () => {
                             className="form-control form-control-lg form-control-a" />
                           </div>
                         </div>
+
+                        <div className="col-md-12 mb-1">
+                          <div className="form-group">
+                            <input 
+                            type="email" 
+                            id='inputEmail'
+                            placeholder='Email *'
+                            required
+                            className="form-control form-control-lg form-control-a" />
+                          </div>
+                        </div>
+
+                        <div className="col-md-12 mb-1">
+                          <div className="form-group">
+                            <textarea 
+                            name="message" 
+                            id="textMessage" 
+                            placeholder='Comment *'
+                            cols="45"
+                            rows="8"
+                            className="form-control"></textarea>
+                          </div>
+                        </div>
+                        <div className="col-md-12 mt-3">
+                          <button type='submit' className="btn btn-a">
+                            Send Message
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
