@@ -25,7 +25,8 @@ const fetchAllProperties = async () => {
     "status": status->name,
     garages,
     "imageUrl": images[0].asset->url,
-    images
+    images,
+    "province": provincename->name
   }`;
   const data = await client.fetch(query);
   return data;
@@ -37,6 +38,8 @@ const SearchResults = () => {
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [status, setStatus] = useState('');
+  const [province, setProvince] = useState('');
+  
   const searchParams = useSearchParams();
 
 
@@ -47,10 +50,16 @@ const SearchResults = () => {
   useEffect(() => {
     const searchKeyword = searchParams.get('keyword');
     const propertyStatus = searchParams.get('propertyStatus');
+    const searchProvince = searchParams.get('province');
 
     // Set the state variables
     if (searchKeyword) setSearchQuery(searchKeyword);
     if (propertyStatus) setStatus(propertyStatus);
+    if (searchProvince) setProvince(searchProvince);
+
+    console.log('this is the province',province);
+
+
   }, [searchParams]);
 
   useEffect(() => {
@@ -63,17 +72,21 @@ const SearchResults = () => {
         );
       }
 
-      if (status) {
+      if (status && status !== 'All') {
         filtered = filtered.filter(
           (property) => property.status.toLowerCase() === status.toLowerCase()
         );
       }
-
+      if (province && province !== 'All') {
+        filtered = filtered.filter(
+          (property) => property.province.toLowerCase() === province.toLowerCase()
+        );
+      }
       setFilteredProperties(filtered);
     };
 
     filterProperties();
-  }, [searchQuery, status, allProperties]);
+  }, [searchQuery, status, province, allProperties]);
 
   if (error) throw new Error("no data fetched")
   if (isLoading) return console.log('loading state')

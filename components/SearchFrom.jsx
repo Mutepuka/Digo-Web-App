@@ -13,7 +13,7 @@ const SearchFrom = () => {
      const [searchQuery, setSearchQuery] = useState('');
      const [status, setStatus] = useState('');
      const [bedrooms, setBedrooms] = useState('');
-     const [cities, setCities] = useState('');
+     const [province, setProvince] = useState('');
      const [bathrooms, setBathrooms] = useState('');
      const [garages, setGarages] = useState('');
      const [price, setPrice] = useState('');
@@ -26,7 +26,7 @@ const SearchFrom = () => {
     const hanldeSearchQuery = ()=>{
         
         //navigate the user to the properties page
-       route.push(`/properties/search?keyword=${searchQuery}&propertyStatus=${status}`);
+       route.push(`/properties/search?keyword=${searchQuery}&propertyStatus=${status}&province=${province}`);
        document.body.classList.remove('box-collapse-open');
        document.body.classList.add('box-collapse-close');
         
@@ -70,11 +70,19 @@ const SearchFrom = () => {
                     </div>
                     <div className="col-md-6 mb-2">
                         <div className="form-group mt-3">
-                            <label htmlFor="city" className="pb-2">City</label>
-                            <select className="form-control form-select form-control-a" id="city" value={cities} onChange={(e) => setCities(e.target.value)}>
-                                <option>All Cities</option>
+                            <label htmlFor="city" className="pb-2">Provinces</label>
+                            <select className="form-control form-select form-control-a" id="city" value={province} onChange={(e) => setProvince(e.target.value)}>
+                                <option>All</option>
                                 <option>Lusaka</option>
                                 <option>CopperBelt</option>
+                                <option>Central</option>
+                                <option>Eastern</option>
+                                <option>Luapula</option>
+                                <option>Muchinga</option>
+                                <option>North-Western</option>
+                                <option>Northern</option>
+                                <option>Southern</option>
+                                <option>Western</option>
                             </select>
                         </div>
                     </div>
@@ -83,8 +91,8 @@ const SearchFrom = () => {
                             <label htmlFor="bedrooms" className="pb-2">Bedrooms</label>
                             <select className="form-control form-select form-control-a" id="bedrooms" value={bedrooms} onChange={(e) => setBedrooms(e.target.value)}>
                                 <option>All</option>
-                                <option>01</option>
-                                <option>02</option>
+                                <option>1</option>
+                                <option>2</option>
                             </select>
                         </div>
                     </div>

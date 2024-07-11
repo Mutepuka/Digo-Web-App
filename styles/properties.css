@@ -126,8 +126,29 @@ PROPERTIES CARD
         font-size: 1rem;
     }
 }
-.img-box-a{
+@media(min-width: 992px){
+     .img-box-a{
     height: 70vh;
+    }
+}
+
+@media(min-width: 992px){
+    .img-box-a img{
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+}
+@media(max-width: 786px){
+    .img-box-a img{
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+      background-size: contain;
+    }
+
 }
 .img-box-a img{
     height: 100%;
@@ -135,7 +156,7 @@ PROPERTIES CARD
     background-repeat: no-repeat;
   background-size: contain;
 }
-@media(min-width: 687px){
+@media(max-width: 687px){
     .img-box-a{
         height: 70vh;
 
@@ -143,7 +164,7 @@ PROPERTIES CARD
 }
 @media(min-width: 540px){
     .img-box-a{
-        height: 50vh;
+        height: 55vh;
 
     }
 }
