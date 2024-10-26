@@ -25,16 +25,16 @@ const Footer = () => {
               </div>
               <div className="w-body-a">
                 <p className="w-text-a color-text-a">
-                  Write something about brand name and what we are about the things that we are specailized in and etc..
+                Based in the heart of Zambia, Digo Estate is dedicated to connecting people with their dream homes and investment properties. With a deep understanding of the Zambian real estate landscape, we offer tailored solutions for buying, selling, and renting properties across the country. Our commitment is to provide professional, reliable, and personalized service to clients looking to build a future in Zambia’s vibrant property market
                 </p>
               </div>
               <div className="w-footer-a">
                 <ul className="list-unstyled">
                   <li className="colr-a">
-                    <span className="color-text-a">Phone.</span>{' '}+26097 -2389-39
+                    <span className="color-text-a">Phone.</span>{' '}+26096 -7899-674
                   </li>
                   <li className="colr-a">
-                    <span className="color-text-a">Email.</span>{' '}company@email.com
+                    <span className="color-text-a">Email.</span>{' '}digoestate@gmail.com
                   </li>
                 </ul>
               </div>

@@ -26,7 +26,7 @@ const PropertiesCard = ({data}) => {
                 <div className="card-body-a">
                     <div className="price-box d-flex">
                         <span className="price-a">
-                           {data.propstatus} | ZMW {data.price}
+                           {data.status} | ZMW {data.price}
                         </span>
                     </div>
                     <Link href={`/properties/${data.slug}`} className='link-a'>

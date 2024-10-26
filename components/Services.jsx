@@ -29,7 +29,7 @@ const Services = () => {
                         </div>
                         <div className="card-body-c">
                             <p className="content-c">
-                                Write something about digo services and what we do so that we can attract investors and cllients.
+                            Discover a world where lifestyle meets luxury. From trendy neighborhoods to exclusive amenities, find properties that align with the lifestyle you envision. Explore homes designed to elevate your everyday living with modern conveniences and exceptional surroundings.
                             </p>
                         </div>
                         <div className="card-footer-c">
@@ -53,7 +53,7 @@ const Services = () => {
                         </div>
                         <div className="card-body-c">
                             <p className="content-c">
-                                Write something about digo services and what we do so that we can attract investors and cllients.
+                            Financing your dream home has never been easier. Our team provides expert guidance on loan options tailored to fit your budget and lifestyle. Get step-by-step support through the application process and find competitive rates to make homeownership more accessible.
                             </p>
                         </div>
                         <div className="card-footer-c">
@@ -77,7 +77,7 @@ const Services = () => {
                         </div>
                         <div className="card-body-c">
                             <p className="content-c">
-                                Write something about digo services and what we do so that we can attract investors and cllients.
+                            Ready to sell your property? Let us help you maximize its market value. With in-depth market analysis and personalized selling strategies, we ensure a smooth and profitable transaction. Reach the right buyers and get the best offers with our dedicated sales support.
                             </p>
                         </div>
                         <div className="card-footer-c">

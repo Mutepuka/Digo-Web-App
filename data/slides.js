@@ -5,10 +5,10 @@ const slides = [
     subtitle: "Lusaka, Kabulonga",
     code: "78345",
     number: "204",
-    lineone: "Province",
-    linetwo: "Road or Street name",
+    lineone: "chikemwiko road",
+    linetwo: "Bishops Road",
     type: "Rent",
-    price: 220
+    price: "367,789"
   },
   {
     id: "2",
@@ -16,10 +16,10 @@ const slides = [
     subtitle: "Lusaka, Kabluonga",
     code: "78345",
     number: "582",
-    lineone: "Province",
-    linetwo: "Road or Street name",
+    lineone: "Lusaka",
+    linetwo: "Chikemwiko close",
     type: "Rent",
-    price: 350
+    price: "564,000"
   },
   {
     id: "3",
@@ -27,10 +27,10 @@ const slides = [
     subtitle: "Lusaka, New Kasama",
     code: "78345",
     number: "582",
-    lineone: "Province",
-    linetwo: "Road or Street name",
+    lineone: "Lusaka",
+    linetwo: "Chikemwiko close",
     type: "Sale",
-    price: 320000
+    price: "320,000"
   }
 ];
 

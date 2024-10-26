@@ -14,6 +14,7 @@
     "@sanity/vision": "^3.36.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "fuse": "^0.12.1",
     "next": "14.2.3",
     "next-sanity": "^9.0.17",
     "react": "^18",

@@ -22,7 +22,7 @@ const Properties = () => {
           baths,
           price,
           "slug": slug.current,
-          "propstatus": status->name,
+          "status": status->name,
           garages,
         "imageUrl": images[0].asset->url
         }`;
