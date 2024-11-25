@@ -223,11 +223,12 @@ a:hover{
 @media(min-width: 768px){
     .section-t8{
         padding-top: 2rem;
+        
     }
 }
 @media(min-width: 640px){
     .section-t8{
-        padding-top: 2rem;
+        padding: 1rem 0 2rem 0; 
     }
 }
 @media(max-width: 640px){
@@ -241,6 +242,7 @@ a:hover{
 @media(min-width: 768px){
     .section-t4{
         padding-top: 2rem;
+        background-color: #f59d9d;
     }
 }
 .section-t3{
@@ -248,23 +250,26 @@ a:hover{
 }
 @media(min-width: 768px){
     .section-md-t3{
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
 }
 .section-b2{
     padding-bottom: 2rem;
+    background-color: #d44521;
 }
 .section-tb85{
     padding: 8rem 0 5rem 0;
+    background-color: #21d439;
 }
 @media(max-width: 767px){
     .section-tb85{
         padding: 4rem 0 2.5rem 0;
+        background-color: #2142d4;
     }
 }
 /*********** TITLE ********/
 .title-wrap{
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
 }
 .title-a{
     text-decoration: none;
@@ -532,7 +537,8 @@ a:hover{
 
 /********* Intro Signle *********/
 .intro-single{
-    padding: 12rem 0 3rem;
+    padding: 3rem 0 3rem;
+    
 }
 @media(max-width: 768px){
     .intro-single{
@@ -541,6 +547,7 @@ a:hover{
 }
 .intro-single .title-single-box{
     padding: 1rem 0 1rem 2rem;
+    
 }
 .intro-single .title-single-box{
     border-left:  3px solid #2eca6a;

@@ -6,7 +6,7 @@ import BreadCrumb from '@components/BreadCrumb';
 import { client } from '@libs/sanity';
 import useSWR from 'swr';
 import PropertiesCard from '@components/PropertiesCard';
-import '@styles/propertieslist.css';
+//import '@styles/propertieslist.css';
 
 const fetchAllProperties = async () => {
   const query = `*[_type == "property"]{
