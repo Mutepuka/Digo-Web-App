@@ -180,6 +180,19 @@ PROPERTIES CARD
     }
 
 }
+@media (min-width: 360px) and (max-width: 480px){
+    .img-box-a{
+        height: 60vh;
+    }
+    .img-box-a img{
+        height: 100%;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+}
 
 /*
 @media (min-width: 768px) and (min-width: 768px){
