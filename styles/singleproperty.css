@@ -100,6 +100,10 @@
 
 /*** media queries ***/
 @media (min-width: 768px){
+    .intro-single{
+        padding-bottom: 0 !important;
+        padding-top: 6.6rem !important;
+    }
     .intro{
         margin-bottom: 1rem !important;
         height: 80vh;
