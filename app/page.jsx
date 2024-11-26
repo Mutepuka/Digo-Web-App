@@ -8,6 +8,7 @@ const Home = () => {
     <>
     <Hero/>
     <main id="main">
+      {/* <Hero/> */}
       <Services/>
       <Properties/>
     </main>

@@ -96,8 +96,6 @@
     background-color: white;
 }
 
-
-
 /*** media queries ***/
 @media (min-width: 768px){
     .intro-single{
@@ -106,7 +104,7 @@
     }
     .intro{
         margin-bottom: 1rem !important;
-        height: 80vh;
+        height: 100vh;
     }
     .intro img{
         width: 100%;
