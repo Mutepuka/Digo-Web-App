@@ -119,6 +119,10 @@
     }
 }
 @media (min-width: 576px) and (max-width: 768px){
+    .intro-single{
+        padding-bottom: 0 !important;
+        padding-top: 6rem !important;
+    }
     .intro{
         padding: 0 !important;
         margin: 0 !important;
@@ -142,6 +146,10 @@
     }
 }
 @media (min-width: 480px) and (max-width: 576px){
+    .intro-single{
+        padding-bottom: 0 !important;
+        padding-top: 6rem !important;
+    }
     .intro{
         padding: 0 !important;
         margin: 0 !important;
@@ -165,6 +173,10 @@
 
 }
 @media (min-width: 360px) and (max-width: 480px){
+    .intro-single{
+        padding-bottom: 0.5rem !important;
+        padding-top: 6rem !important;
+    }
     .intro{
         padding: 0 !important;
         margin: 0 !important;
