@@ -146,7 +146,7 @@ const SingleProperty = () => {
                   <div className="property-price d-flex justify-content-center foo">
                     <div className="card-header-c d-flex">
                       <div className="card-box-ico">
-                        <span className="bi bi-cash">ZMW</span>
+                        <span className="bi bi-cash"> ZMW</span>
                       </div>
                       <div className="card-title-c align-self-center">
                         <h5 className="title-c">{property.price}</h5>

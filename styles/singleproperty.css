@@ -1,4 +1,8 @@
 /*=======/ SINGLE PROPERTY /=========*/
+.amenities-list{
+    /* background-color: aqua; */
+    display: flex;
+}
 .gallery-property {
     margin-bottom: 3rem;
 }
@@ -24,7 +28,7 @@
     border: 2px solid #2eca6a;
 }
 .card-box-ico span {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #000000;
 }
 .title-c {
@@ -85,4 +89,78 @@
 .intro .swiper-pagination .swiper-pagination-bullet-active{
     background-color: #2eca6a !important;
     width: 36px;
+}
+
+/*** css optional changes **/
+.property-single{
+    background-color: white;
+}
+
+
+
+/*** media queries ***/
+@media (min-width: 768px){
+    .intro{
+        margin-bottom: 1rem !important;
+        height: 80vh;
+    }
+    .intro img{
+        width: 100%;
+        height: 100%;
+        background-size: cover !important;
+        background-repeat: no-repeat;
+    }
+    .card-header-c{
+        padding: 0;
+    }
+    .title-c{
+        font-size: 1.9rem;
+        margin-left: -40px;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px){
+    .intro{
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 70vh;
+        margin-bottom: 0.5rem !important;
+        
+    }
+    .intro img{
+        width: 100%;
+        height: 100%;
+        background-size: contain !important;
+        background-repeat: no-repeat;
+            
+    }
+    .title-box-d{
+        padding-top: 0.5rem;
+        
+    }
+    .section-t3{
+        padding-top: 1.2rem;
+    }
+}
+@media (min-width: 480px) and (max-width: 576px){
+    .intro{
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto;
+        margin-bottom: 0.5rem !important;
+        
+    }
+    .intro img{
+        width: 100%;
+        height: 100%;
+        background-size: contain !important;
+        background-repeat: no-repeat;
+            
+    }
+    .title-box-d{
+        padding-top: 0.5rem;
+    }
+    .section-t3{
+        padding-top: 0.5rem;
+    }
+
 }

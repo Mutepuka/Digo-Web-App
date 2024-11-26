@@ -7,7 +7,7 @@ import '@styles/properties.css';
 
 const PropertiesCard = ({data}) => {
 
-    console.log('slug', data.slug)
+    //console.log('slug', data.slug)
   return (
     <div className='card-box-a card-shadow'>
         <div className="img-box-a">
