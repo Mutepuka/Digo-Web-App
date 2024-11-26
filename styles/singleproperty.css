@@ -155,7 +155,7 @@
     .intro{
         padding: 0 !important;
         margin: 0 !important;
-        height: auto;
+        height: 100vh;
         margin-bottom: 0.5rem !important;
         
     }
