@@ -170,7 +170,6 @@ PROPERTIES CARD
 @media (min-width: 480px) and (max-width: 576px){
     .img-box-a{
         height: 80vh;
-        border: 2px solid brown;
     }
     .img-box-a img{
         height: 100%;
@@ -194,4 +193,28 @@ PROPERTIES CARD
 
     }
 
+}
+@media (min-width: 768px){
+    .intro-single{
+        padding-top: 6rem !important;
+        padding-bottom: 0 !important;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px){
+    .intro-single{
+        padding-bottom: 0 !important;
+        padding-top: 6rem !important;
+    }
+}
+@media (min-width: 480px) and (max-width: 576px){
+    .intro-single{
+        padding-bottom: 0 !important;
+        padding-top: 6rem !important;
+    }
+}
+@media (min-width: 360px) and (max-width: 480px){
+    .intro-single{
+        padding-bottom: 0.5rem !important;
+        padding-top: 6rem !important;
+    }
 }

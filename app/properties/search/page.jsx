@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, Suspense } from 'react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import BreadCrumb from '@components/BreadCrumb';
 import { client } from '@libs/sanity';
@@ -154,11 +155,46 @@ const SearchResults = () => {
 
   return (
     <main id='main'>
-    <BreadCrumb
+    {/* <BreadCrumb
     title="Our Properties"
     subtitle="Properties List"
     page="Properties"
-    />
+    /> */}
+    <section className="intro-single">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 col-lg-8">
+              <div className="title-single-box">
+                <h1 className="title-single">Our Propertie
+                </h1>
+                <span className="color-text-a">Properties List</span>
+              </div>
+            </div>
+            <div className="col-md-12 col-lg-4">
+              <nav aria-label='breadcrumb' className="breadcrumb-box d-flex justify-content-lg-end">
+                <ol className="breadcrumb">
+                  <li className="breadcrumb-item">
+                    <Link href="/">
+                      <i className="bi bi-house-door-fill"></i>
+                    </Link>
+                  </li>
+
+                  <li className="breadcrumb-item">
+                    <Link href="/properties">Properties</Link>
+                  </li>
+
+                  <li className="breadcrumb-item active" aria-current="page">
+                    {/* {property.number}{property.addressOne}{' '}{property.addressTwo} */}
+                  </li>
+                </ol>
+              </nav>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     <section className="property-grid grid">
         <div className="container">
         <div className="row">

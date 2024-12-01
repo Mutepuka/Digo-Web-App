@@ -99,7 +99,7 @@
 /*** media queries ***/
 @media (min-width: 768px){
     .intro-single{
-        padding-bottom: 0 !important;
+        padding-bottom: 0.3rem !important;
         padding-top: 6.6rem !important;
     }
     .intro{
