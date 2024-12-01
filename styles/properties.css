@@ -183,7 +183,6 @@ PROPERTIES CARD
 @media (min-width: 360px) and (max-width: 480px){
     .img-box-a{
         height: 60vh;
-        border: 1px solid green;
     }
     .img-box-a img{
         height: 100%;
