@@ -149,7 +149,49 @@ const SearchResults = () => {
 
   if (error) throw new Error("no data fetched")
   if (isLoading) return console.log('loading state')
-  if (filteredProperties.length === 0) return console.log('no data matched')
+  // if (filteredProperties.length === 0) return console.log('no data matched')
+  if (filteredProperties.length === 0) {
+    return (
+      <div className="container">
+        <section className="intro-single">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 col-lg-8">
+                <div className="title-single-box">
+                  <h1 className="title-single">Our Properties</h1>
+                  <span className="color-text-a">Properties List</span>
+                </div>
+              </div>
+              <div className="col-md-12 col-lg-4">
+                <nav
+                  aria-label="breadcrumb"
+                  className="breadcrumb-box d-flex justify-content-lg-end"
+                >
+                  <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <Link href="/">
+                        <i className="bi bi-house-door-fill"></i>
+                      </Link>
+                    </li>
+                    <li className="breadcrumb-item">
+                      <Link href="/properties">Properties</Link>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center" style={{ height: "300px" }}>
+                <h2 className="text-danger">No data found</h2>
+                <p className="text-muted">Try adjusting your search filters.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+  
 
   console.log('filtered data', filteredProperties)
 
@@ -181,10 +223,6 @@ const SearchResults = () => {
 
                   <li className="breadcrumb-item">
                     <Link href="/properties">Properties</Link>
-                  </li>
-
-                  <li className="breadcrumb-item active" aria-current="page">
-                    {/* {property.number}{property.addressOne}{' '}{property.addressTwo} */}
                   </li>
                 </ol>
               </nav>
