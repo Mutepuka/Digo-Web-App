@@ -6,7 +6,6 @@ import BreadCrumb from '@components/BreadCrumb';
 import { client } from '@libs/sanity';
 import useSWR from 'swr';
 import PropertiesCard from '@components/PropertiesCard';
-//import '@styles/propertieslist.css';
 
 const fetchAllProperties = async () => {
   const query = `*[_type == "property"]{
@@ -40,6 +39,10 @@ const SearchResults = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [status, setStatus] = useState('');
   const [province, setProvince] = useState('');
+  const [bathrooms, setBathrooms] = useState('');
+  const [garages, setGarages] = useState('');
+  const [price, setPrice] = useState('');
+  const [bedrooms, setBedrooms] = useState('');
   
   const searchParams = useSearchParams();
 
@@ -48,17 +51,42 @@ const SearchResults = () => {
     onSuccess: (data) => setAllProperties(data),
   });
 
+  // Input validation handlers
+  const handlePriceChange = (value) => {
+    if (value === '' || /^\d+(\.\d{0,2})?$/.test(value)) {
+      setPrice(value);
+    }
+  };
+
+  const handleNumericChange = (value, setState) => {
+    if (value === '' || /^\d+$/.test(value)) {
+      setState(value);
+    }
+  };
+
   useEffect(() => {
     const searchKeyword = searchParams.get('keyword');
     const propertyStatus = searchParams.get('propertyStatus');
     const searchProvince = searchParams.get('province');
+
+    // testing if the get value is the same as the value in the form
+    const searchBathrooms = searchParams.get('bathrooms');
+    const searchGarages = searchParams.get('garages');
+    const searchBedrooms = searchParams.get('bedrooms');
+    const searchPrice = searchParams.get('price');
 
     // Set the state variables
     if (searchKeyword) setSearchQuery(searchKeyword);
     if (propertyStatus) setStatus(propertyStatus);
     if (searchProvince) setProvince(searchProvince);
 
-    console.log('this is the province',province);
+    // testing and getting values of the search
+    if (searchBathrooms) handleNumericChange(searchBathrooms, setBathrooms);
+    if (searchGarages) handleNumericChange(searchGarages, setGarages);
+    if (searchBedrooms) handleNumericChange(searchBedrooms, setBedrooms);
+    if (searchPrice) handlePriceChange(searchPrice);
+
+    console.log('these are the values',bedrooms,garages);
 
 
   }, [searchParams]);
@@ -83,11 +111,40 @@ const SearchResults = () => {
           (property) => property.province.toLowerCase() === province.toLowerCase()
         );
       }
+
+      //testing out filters 
+      //NOTE: THIS LOGIC IS fetching data that is equal to or greater than
+      //to change the logic instead of => use ===
+      
+      if (bathrooms && parseInt(bathrooms, 10)) {
+        filtered = filtered.filter(
+          (property) => property.baths >= parseInt(bathrooms, 10)
+        );
+      }
+
+      if (garages && parseInt(garages, 10)) {
+        filtered = filtered.filter(
+          (property) => property.garages >= parseInt(garages, 10)
+        );
+      }
+
+      if (bedrooms && parseInt(bedrooms, 10)) {
+        filtered = filtered.filter(
+          (property) => property.beds >= parseInt(bedrooms, 10)
+        );
+      }
+
+      if (price && parseFloat(price)) {
+        filtered = filtered.filter(
+          (property) => property.price <= parseFloat(price)
+        );
+      }
+
       setFilteredProperties(filtered);
     };
 
     filterProperties();
-  }, [searchQuery, status, province, allProperties]);
+  }, [searchQuery, status, province, bathrooms, garages, bedrooms, price, allProperties]);
 
   if (error) throw new Error("no data fetched")
   if (isLoading) return console.log('loading state')

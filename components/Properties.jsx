@@ -4,14 +4,8 @@ import {useState,useEffect} from 'react';
 import PropertiesCard from './PropertiesCard';
 import { client } from '@libs/sanity';
 import Link from 'next/link';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import {Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
-// import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

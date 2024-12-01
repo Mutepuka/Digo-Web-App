@@ -26,7 +26,7 @@ const SearchFrom = () => {
     const hanldeSearchQuery = ()=>{
         
         //navigate the user to the properties page
-       route.push(`/properties/search?keyword=${searchQuery}&propertyStatus=${status}&province=${province}`);
+       route.push(`/properties/search?keyword=${searchQuery}&propertyStatus=${status}&province=${province}&price=${price}&bathrooms=${bathrooms}&garages=${garages}&bedrooms=${bedrooms}`);
        document.body.classList.remove('box-collapse-open');
        document.body.classList.add('box-collapse-close');
         
@@ -89,33 +89,42 @@ const SearchFrom = () => {
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="bedrooms" className="pb-2">Bedrooms</label>
-                            <select className="form-control form-select form-control-a" id="bedrooms" value={bedrooms} onChange={(e) => setBedrooms(e.target.value)}>
-                                <option>All</option>
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
+                            <input
+                            type="text"
+                            placeholder="Bedrooms"
+                            id='bedrooms'
+                            value={bedrooms}
+                            onChange={(e) => setBedrooms(e.target.value)}
+                            className="form-control form-control-a"
+                            />
                         </div>
                     </div>
 
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="garage" className="pb-2">Garages</label>
-                            <select className="form-control form-select form-control-a" id="garages" value={garages} onChange={(e) => setGarages(e.target.value)}>
-                                <option>All</option>
-                                <option>01</option>
-                                <option>02</option>
-                            </select>
+                            <input
+                            type="text"
+                            placeholder="Garages"
+                            id='garages'
+                            value={garages}
+                            onChange={(e) => setGarages(e.target.value)}
+                            className="form-control form-control-a"
+                            />
                         </div>
                     </div>
 
                     <div className='col-md-6 mb-2'>
                        <div className="form-group mt-3">
                             <label htmlFor="bathrooms" className="pb-2">Bathrooms</label>
-                            <select className="form-control form-select form-control-a" id="bathrooms" value={bathrooms} onChange={(e) => setBathrooms(e.target.value)}>
-                                <option>All</option>
-                                <option>01</option>
-                                <option>02</option>
-                            </select>
+                            <input
+                            type="text"
+                            placeholder="Bathrooms"
+                            id='bathrooms'
+                            value={bathrooms}
+                            onChange={(e) => setBathrooms(e.target.value)}
+                            className="form-control form-control-a"
+                            />
                         </div>
                     </div>
 
