@@ -1,9 +1,11 @@
 import '@styles/loading.css';
 
 const LoadingSpinner = () => (
-    <div className="flex items-center justify-center h-screen">
-      <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900" />
-    </div>
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
   );
   
   export default LoadingSpinner;

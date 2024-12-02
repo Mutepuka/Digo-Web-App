@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { client } from '@libs/sanity';
 import useSWR from 'swr';
 import PropertiesCard from '@components/PropertiesCard';
+import LoadingSpinner from '@app/loading';
 
 const fetchAllProperties = async () => {
   const query = `*[_type == "property"][0...8]|
@@ -191,7 +192,6 @@ const SearchResults = () => {
                   </ol>
                 </nav>
               </div>
-              
             </div>
           </div>
         </section>
@@ -216,8 +216,18 @@ const SearchResults = () => {
                 </div>
 
                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center" style={{ height: "300px" }}>
-                <h2 className="text-danger">No data found</h2>
-                <p className="text-muted">Try adjusting your search filters.</p>
+                  {isLoading ?(
+                    <div>
+                      <LoadingSpinner/>
+                    </div>
+                  ):(
+                    <div>
+                      <h2 className="text-danger">No data found</h2>
+                      <p className="text-muted">Try adjusting your search filters.</p>
+                    </div>
+                  )}
+                {/* <h2 className="text-danger">No data found</h2>
+                <p className="text-muted">Try adjusting your search filters.</p> */}
               </div>
 
             </div>
