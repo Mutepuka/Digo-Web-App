@@ -100,7 +100,6 @@ const Properties = () => {
             <div className="row">
                 <div className="col-sm-12">
                     <Pagination/>
-
                 </div>
             </div>
             </div> 

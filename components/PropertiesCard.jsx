@@ -7,7 +7,17 @@ import '@styles/properties.css';
 
 const PropertiesCard = ({data}) => {
 
-    //console.log('slug', data.slug)
+    const formatAmount = (amount)=> {
+        const formatter = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "ZMW",
+          minimumFractionDigits: 2,
+        });
+      
+        return formatter.format(amount);
+      }
+      
+
   return (
     <div className='card-box-a card-shadow'>
         <div className="img-box-a">
@@ -26,7 +36,7 @@ const PropertiesCard = ({data}) => {
                 <div className="card-body-a">
                     <div className="price-box d-flex">
                         <span className="price-a">
-                           {data.status} | ZMW {data.price}
+                           {data.status} | {formatAmount( data.price)}
                         </span>
                     </div>
                     <Link href={`/properties/${data.slug}`} className='link-a'>
