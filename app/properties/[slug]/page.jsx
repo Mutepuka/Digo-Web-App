@@ -67,7 +67,17 @@ const SingleProperty = () => {
 
     useEffect(() => {
         getProperty()
-    }, [])
+    }, []);
+
+    const formatAmount = (amount)=> {
+      const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "ZMW",
+        minimumFractionDigits: 2,
+      });
+    
+      return formatter.format(amount);
+    }
 
     if(!property){
       return(
@@ -147,10 +157,10 @@ const SingleProperty = () => {
                   <div className="property-price d-flex justify-content-center foo">
                     <div className="card-header-c d-flex">
                       <div className="card-box-ico">
-                        <span className="bi bi-cash"> ZMW</span>
+                        <span className="bi bi-cash"></span>
                       </div>
                       <div className="card-title-c align-self-center">
-                        <h5 className="title-c">{property.price}</h5>
+                        <h5 className="title-c">{formatAmount(property.price)}</h5>
                       </div>
 
                     </div>
