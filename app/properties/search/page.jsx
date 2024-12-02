@@ -226,15 +226,11 @@ const SearchResults = () => {
                       <p className="text-muted">Try adjusting your search filters.</p>
                     </div>
                   )}
-                {/* <h2 className="text-danger">No data found</h2>
-                <p className="text-muted">Try adjusting your search filters.</p> */}
               </div>
 
             </div>
           </div>
         </section>
-
-
       </div>
     );
   }
