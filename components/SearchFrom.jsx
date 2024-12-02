@@ -50,7 +50,7 @@ const SearchFrom = () => {
                             <label className="pb-2" htmlFor="Type">Keyboard</label>
                             <input
                             type="text"
-                            placeholder="keyword"
+                            placeholder="Area Location"
                             id='keyword'
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
