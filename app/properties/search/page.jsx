@@ -119,22 +119,22 @@ const SearchResults = () => {
       
       if (bathrooms && parseInt(bathrooms, 10)) {
         filtered = filtered.filter(
-          (property) => property.baths >= parseInt(bathrooms, 10)
+          (property) => property.baths === parseInt(bathrooms, 10)
         );
       }
-
+    
       if (garages && parseInt(garages, 10)) {
         filtered = filtered.filter(
-          (property) => property.garages >= parseInt(garages, 10)
+          (property) => property.garages === parseInt(garages, 10)
         );
       }
-
+    
       if (bedrooms && parseInt(bedrooms, 10)) {
         filtered = filtered.filter(
-          (property) => property.beds >= parseInt(bedrooms, 10)
+          (property) => property.beds === parseInt(bedrooms, 10)
         );
       }
-
+    
       if (price && parseFloat(price)) {
         filtered = filtered.filter(
           (property) => property.price <= parseFloat(price)

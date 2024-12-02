@@ -10,6 +10,8 @@ import '@styles/propertieslist.css';
 const Properties = () => {
 
     const [properties, setProperties] = useState([]);
+    const [filteredProperties, setFilteredProperties] = useState([]);
+    const [selectedType, setSelectedType] = useState('All');
 
     useEffect(() => {
         const query = `*[_type == 'property'][0...8]|
@@ -21,16 +23,31 @@ const Properties = () => {
           beds,
           baths,
           price,
+          "type": propertytype->name,
           "slug": slug.current,
           "status": status->name,
           garages,
         "imageUrl": images[0].asset->url
         }`;
         client.fetch(query).then((data)=>{
-            setProperties(data)
+            setProperties(data);
+            setFilteredProperties(data);
         });
       
     }, []);
+
+    const handleFilterChange = (event) => {
+        const selectedValue = event.target.value;
+        setSelectedType(selectedValue);
+    
+        if (selectedValue === 'All') {
+          setFilteredProperties(properties); // Show all properties for "All"
+        } else {
+          setFilteredProperties(
+            properties.filter((property) => property.type === selectedValue)
+          );
+        }
+      };
     
   return (
     <main id="main">
@@ -47,24 +64,38 @@ const Properties = () => {
                 <div className="col-sm-12">
                     <div className="grid-option">
                         
-                            <select className="custom-select">
-                                <option selected>All</option>
-                                <option value="1">Houses</option>
-                                <option value="2">Apartments</option>
-                                <option value="3">Shops</option>
-                                <option value="4">Bording House</option>
-                                <option value="5">WareHouse</option>
-                                <option value="6">Farm Land</option>
-                            </select>
-                        
+                    <select value={selectedType}
+            onChange={handleFilterChange} className="custom-select">
+                    <option value="All">All</option>
+                    <option value="Apartments">Apartments</option>
+                    <option value="Boarding House">Boarding House</option>
+                    <option value="Farm Land">Farm Land</option>
+                    <option value="Houses">Houses</option>
+                    <option value="Offices">Offices</option>
+                    <option value="Shops">Shops</option>
+                    <option value="Warehouse">Warehouse</option>
+                    </select>
                     </div>
                 </div>
-                {properties && properties.length > 0 && properties.map(property=>(
+                {/* {properties && properties.length > 0 && properties.map(property=>(
                     <div className="col-md-4" key={property._id}>
                         <PropertiesCard data={property}/>
                     </div>
                     
-                ))}
+                ))} */}
+                {filteredProperties && filteredProperties.length > 0 ? (
+              filteredProperties.map((property) => (
+                <div className="col-md-4" key={property._id}>
+                  <PropertiesCard data={property} />
+                </div>
+              ))
+            ) : (
+              <div className="col-sm-12 text-center">
+                <h3 className="text-danger">No properties found</h3>
+              </div>
+            )}
+
+
             </div>
             <div className="row">
                 <div className="col-sm-12">

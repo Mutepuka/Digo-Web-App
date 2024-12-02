@@ -8,7 +8,7 @@ export const property = defineType({
         defineField({
             name: 'area',
             type: 'string',
-            title: 'Property Area'
+            title: 'Property Area Square Fit'
         }),
         defineField({
             name: 'images',
@@ -29,12 +29,12 @@ export const property = defineType({
         defineField({
             name: 'addressOne',
             type: 'string',
-            title: 'Address One'
+            title: 'Location Address'
         }),
         defineField({
             name: 'addressTwo',
             type: 'string',
-            title: 'Address Two'
+            title: 'Road Name'
         }),
         defineField({
             name: 'slug',
