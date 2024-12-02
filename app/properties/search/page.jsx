@@ -3,13 +3,13 @@
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import BreadCrumb from '@components/BreadCrumb';
 import { client } from '@libs/sanity';
 import useSWR from 'swr';
 import PropertiesCard from '@components/PropertiesCard';
 
 const fetchAllProperties = async () => {
-  const query = `*[_type == "property"]{
+  const query = `*[_type == "property"][0...8]|
+        order(_createdAt desc){
     _id,
     area,
     amenities,
@@ -38,6 +38,7 @@ const SearchResults = () => {
   const [allProperties, setAllProperties] = useState([]);
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedType, setSelectedType] = useState('All');
   const [status, setStatus] = useState('');
   const [province, setProvince] = useState('');
   const [bathrooms, setBathrooms] = useState('');
@@ -63,6 +64,11 @@ const SearchResults = () => {
     if (value === '' || /^\d+$/.test(value)) {
       setState(value);
     }
+  };
+
+   // Handle dropdown selection
+   const handleTypeChange = (e) => {
+    setSelectedType(e.target.value);
   };
 
   useEffect(() => {
@@ -116,6 +122,12 @@ const SearchResults = () => {
       //testing out filters 
       //NOTE: THIS LOGIC IS fetching data that is equal to or greater than
       //to change the logic instead of => use ===
+
+      if (selectedType !== 'All') {
+        filtered = filtered.filter((property) =>
+          property.type.toLowerCase() === selectedType.toLowerCase()
+        );
+      }
       
       if (bathrooms && parseInt(bathrooms, 10)) {
         filtered = filtered.filter(
@@ -145,10 +157,10 @@ const SearchResults = () => {
     };
 
     filterProperties();
-  }, [searchQuery, status, province, bathrooms, garages, bedrooms, price, allProperties]);
+  }, [searchQuery, status,selectedType, province, bathrooms, garages, bedrooms, price, allProperties]);
 
   if (error) throw new Error("no data fetched")
-  if (isLoading) return console.log('loading state')
+  // if (isLoading) return console.log('loading state')
   // if (filteredProperties.length === 0) return console.log('no data matched')
   if (filteredProperties.length === 0) {
     return (
@@ -179,29 +191,49 @@ const SearchResults = () => {
                   </ol>
                 </nav>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center" style={{ height: "300px" }}>
-                <h2 className="text-danger">No data found</h2>
-                <p className="text-muted">Try adjusting your search filters.</p>
-              </div>
+              
             </div>
           </div>
         </section>
+
+        <section className="property-grid grid">
+          <div className="container">
+            <div className="row">
+            <div className="col-sm-12">
+                <div className="grid-option">
+                <select className="custom-select" value={selectedType}
+                  onChange={handleTypeChange}>
+                    <option value="All">All</option>
+                    <option value="Apartments">Apartments</option>
+                    <option value="Boarding House">Boarding House</option>
+                    <option value="Farm Land">Farm Land</option>
+                    <option value="Houses">Houses</option>
+                    <option value="Offices">Offices</option>
+                    <option value="Shops">Shops</option>
+                    <option value="Warehouse">Warehouse</option>
+                </select>
+                    </div>
+                </div>
+
+                <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center" style={{ height: "300px" }}>
+                <h2 className="text-danger">No data found</h2>
+                <p className="text-muted">Try adjusting your search filters.</p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
       </div>
     );
   }
   
 
-  console.log('filtered data', filteredProperties)
+  //console.log('filtered data', filteredProperties)
 
   return (
     <main id='main'>
-    {/* <BreadCrumb
-    title="Our Properties"
-    subtitle="Properties List"
-    page="Properties"
-    /> */}
     <section className="intro-single">
         <div className="container">
           <div className="row">
@@ -238,14 +270,16 @@ const SearchResults = () => {
         <div className="row">
             <div className="col-sm-12">
                 <div className="grid-option">
-                <select className="custom-select">
-                    <option selected>All</option>
-                    <option value="1">Houses</option>
-                    <option value="2">Apartments</option>
-                    <option value="3">Shops</option>
-                    <option value="4">Bording House</option>
-                    <option value="5">WareHouse</option>
-                    <option value="6">Farm Land</option>
+                <select className="custom-select" value={selectedType}
+                  onChange={handleTypeChange}>
+                    <option value="All">All</option>
+                    <option value="Apartments">Apartments</option>
+                    <option value="Boarding House">Boarding House</option>
+                    <option value="Farm Land">Farm Land</option>
+                    <option value="Houses">Houses</option>
+                    <option value="Offices">Offices</option>
+                    <option value="Shops">Shops</option>
+                    <option value="Warehouse">Warehouse</option>
                 </select>
                     </div>
                 </div>
