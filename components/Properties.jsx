@@ -65,7 +65,7 @@ const Properties = () => {
                 },
                 480: {
                     // For screens >= 480px
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                   },
                   768: {
