@@ -16,7 +16,7 @@ const Properties = () => {
     const [properties, setProperties] = useState([]);
 
     useEffect(() => {
-        const query = `*[_type == 'property'][0...4]|
+        const query = `*[_type == 'property'][0...5]|
         order(_createdAt desc){
         _id,
           area,
@@ -33,7 +33,9 @@ const Properties = () => {
           client.fetch(query).then((data)=>{
             setProperties(data)
           }) 
-    }, [])
+    }, []);
+
+    console.log('latest properties', properties)
     
   return (
     <section className="section-property section-t8">
