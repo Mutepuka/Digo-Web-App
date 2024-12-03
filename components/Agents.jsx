@@ -28,7 +28,9 @@ const Agents = () => {
             setAgents(data)
         });
       
-    }, [])
+    }, []);
+
+    console.log('agent list on main page', agents)
     
   return (
     <section className="section-agents section-t8">
