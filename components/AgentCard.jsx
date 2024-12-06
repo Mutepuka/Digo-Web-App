@@ -14,7 +14,7 @@ const AgentCard = ({agent}) => {
             <div className="card-header-d">
                 <div className="card-title-d align-self-center">
                     <h3 className="title-d">
-                        <Link href='/agents' className='link-two'>{agent.name}</Link>
+                        <Link href={`/agents/${agent.slug}`} className='link-two'>{agent.name}</Link>
                     </h3>
                 </div>
             </div>

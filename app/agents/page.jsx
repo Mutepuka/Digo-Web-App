@@ -32,10 +32,6 @@ const AgentList = () => {
       
     }, [])
 
-    console.log('agent list', agents)
-    
-
-
   return (
     <main id="main">
         <BreadCrumb
