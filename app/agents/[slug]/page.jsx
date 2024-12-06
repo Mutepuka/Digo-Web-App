@@ -5,6 +5,7 @@ import { client, urlFor } from '@libs/sanity';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React,{useState, useEffect} from 'react'
+import './styles.css';
 
 const SingalAgent = () => {
 
@@ -106,6 +107,47 @@ const SingalAgent = () => {
                         <h3 className='title-d'>{agent.name}</h3>
                       </div>
                     </div>
+
+                    <div className="agent-content mb-3">
+                      <p className="content-d color-text-a">
+                        {agent.description}
+                      </p>
+                      <div className="info-agents color-a">
+                        <p>
+                          <strong>Phone: </strong>
+                          <span className="color-text-a">{agent.phone}</span>
+                        </p>
+                        <p>
+                          <strong>Email: </strong>
+                          <span className="color-text-a">{agent.email}</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="socails-footer">
+                      <ul className="list-inline">
+                        <li className="list-inline-item">
+                          <Link href="/agents" className='link-one'>
+                          <i className="bi bi-facebook" aria-hidden="true"></i>
+                          </Link>
+                        </li>
+
+                        <li className="list-inline-item">
+                          <Link href="/agents" className='link-one'>
+                          <i className="bi bi-twitter" aria-hidden="true"></i>
+                          </Link>
+                        </li>
+
+                        <li className="list-inline-item">
+                          <Link href="/agents" className='link-one'>
+                          <i className="bi bi-linkedin" aria-hidden="true"></i>
+                          </Link>
+                        </li>
+
+
+                      </ul>
+                    </div>
+
+
                   </div>
                 </div>
               </div>
