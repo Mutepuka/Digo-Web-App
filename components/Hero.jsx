@@ -6,7 +6,7 @@ import slides from '../data/slides';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import '@styles/hero.css';
 import { client } from '@libs/sanity';
 
@@ -23,7 +23,13 @@ const Hero = () => {
           clickable: true,
           type: 'bullets'
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
+        // autoplay={{ delay: 4000 }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        loop={true}
         className="intro intro-carousel swiper position-relative"
       >
         {proslides && proslides.length > 0 && proslides.map(slide=>(

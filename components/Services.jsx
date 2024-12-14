@@ -1,5 +1,6 @@
 import React from 'react';
 import '@styles/services.css';
+import Link from 'next/link';
 
 const Services = () => {
   return (
@@ -33,10 +34,10 @@ const Services = () => {
                             </p>
                         </div>
                         <div className="card-footer-c">
-                            <a href="#" className="link-c link-icon">
+                            <Link href="/lifestyles" className="link-c link-icon">
                                 Read More
                                 <span className="bi bi-chevron-right"></span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -57,10 +58,10 @@ const Services = () => {
                             </p>
                         </div>
                         <div className="card-footer-c">
-                            <a href="#" className="link-c link-icon">
+                            <Link href="/loans" className="link-c link-icon">
                                 Read More
                                 <span className="bi bi-chevron-right"></span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -81,10 +82,10 @@ const Services = () => {
                             </p>
                         </div>
                         <div className="card-footer-c">
-                            <a href="#" className="link-c link-icon">
+                            <Link href="/sells" className="link-c link-icon">
                                 Read More
                                 <span className="bi bi-chevron-right"></span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

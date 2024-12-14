@@ -1,0 +1,156 @@
+/**===================
+############ contact us css ##########
+==============*/
+.contact{
+    padding-top: 1.3rem;
+}
+
+
+.icon-box-icon{
+    padding: 1.2rem !important;
+    margin-left: 0 !important;
+
+}
+.icon-box-content{
+    width: 100%;
+}
+.icon-box-content .icon-box-title{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.icon-box-content .icon-box-title .icon-title{
+    display: flex;
+}
+.socials-footer{
+    width: 100%;
+}
+.socials-footer .list-inline{
+    display: flex;  
+}
+.socials-footer .list-inline .list-inline-item .line-one{
+    margin: 0.5rem; 
+}
+.form-as #sendmessage{
+    color: #2eca6a;
+    border: 1px solid #26a356;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+    padding: 15px;
+    margin-bottom: 15px;
+
+}
+.form-as #errormessage{
+    color: red;
+    display: none;
+    border: 1px solid red;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.form-as #sendmessage.show,
+.form-as #errormessage.show,
+.form-as .show{
+    display: block;
+}
+.form-as .validation{
+    color: red;
+    display: none;
+    margin: 4px 0 20px 0;
+    font-weight: 400;
+    font-size: 13px;
+}
+.form-as label{
+    color: #000000;
+    position: relative;
+}
+.form-as select.form-control-lg:not([size]):not([multiple]){
+    height: 3.5rem;
+}
+.form-as .form-control{
+    border-radius: 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.form-as .form-control.form-control-a{
+    height: 3.5rem;
+}
+.form-as .form-control:focus{
+    box-shadow: none;
+    border-color: #2eca6a;
+}
+.contact-form .error-message{
+    color: #fff;
+    background: #ed3c0d;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+.contact-form .sent-message{
+    display: none;
+    color: #ffffff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+.contact-form .loading{
+    display: none;
+    background: #ffffff;
+    text-align: center;
+    padding: 15px;
+}
+.contact-form .loading::before{
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eeeeee;
+    -webkit-animation: animate-loading is linear infinite;
+    animation: animate-loading is linear infinite;
+}
+.contact-form label{
+    color: #000000;
+    position: relative;
+}
+.contact-form select.form-control-lg:not([size]):not([multiple]){
+    height: 3.5rem;
+}
+.contact-form .form-control{
+    border-radius: 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.contact-form .form-control.form-control-a{
+    height: 3.5rem;
+}
+.contact-form .form-control:focus{
+    box-shadow: none;
+    border-color: #2eca6a;
+}
+@-webkit-keyframes animaate-loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate-loading{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.contact-map{
+    margin-bottom: 1rem;
+}
+.contact-form{
+    padding-top: 2rem;
+}
