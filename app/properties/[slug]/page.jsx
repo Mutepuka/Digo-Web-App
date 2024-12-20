@@ -254,15 +254,20 @@ const SingleProperty = () => {
               </ul>
               <div className="tab-content" id='pill-tabContent'>
                 <div className="tab-pane fade show active" id='pills-video' role='tabpanel' aria-labelledby='pills-video-tab'>
-                  <iframe
-                  src={property.videoUrl}
-                  width="100%"
-                  height="460"
-                  frameBorder="0"
-                  webkitAllowFullscreen
-                  mozAllowFullscreen
-                  allowFullScreen
-                  ></iframe>
+
+                {property.videoUrl ? (
+                    <iframe
+                      src={property.videoUrl}
+                      width="100%"
+                      height="460"
+                      frameBorder="0"
+                      webkitAllowFullscreen
+                      mozAllowFullscreen
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <p>No video available</p> // Optional message if no video is uploaded
+                  )}
                 </div>
               </div>
             </div>
