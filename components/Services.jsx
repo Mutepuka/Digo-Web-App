@@ -35,7 +35,7 @@ const Services = () => {
                         </div>
                         <div className="card-footer-c">
                             <Link href="/lifestyles" className="link-c link-icon">
-                                Read More
+                                Explore More
                                 <span className="bi bi-chevron-right"></span>
                             </Link>
                         </div>
@@ -59,7 +59,7 @@ const Services = () => {
                         </div>
                         <div className="card-footer-c">
                             <Link href="/loans" className="link-c link-icon">
-                                Read More
+                                Explore More
                                 <span className="bi bi-chevron-right"></span>
                             </Link>
                         </div>
@@ -83,7 +83,7 @@ const Services = () => {
                         </div>
                         <div className="card-footer-c">
                             <Link href="/sells" className="link-c link-icon">
-                                Read More
+                                Explore More
                                 <span className="bi bi-chevron-right"></span>
                             </Link>
                         </div>
