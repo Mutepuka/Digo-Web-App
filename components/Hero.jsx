@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import '@styles/hero.css';
-import { client } from '@libs/sanity';
 
 const Hero = () => {
 
