@@ -87,6 +87,9 @@ const Properties = () => {
     setCurrentPage(newPage);
   };
 
+  //conditio rendering
+  
+
   return (
     <main id="main">
       <BreadCrumb
@@ -116,17 +119,12 @@ const Properties = () => {
                 </select>
               </div>
             </div>
-            {filteredProperties && filteredProperties.length > 0 ? (
-              filteredProperties.map((property) => (
-                <div className="col-md-4" key={property._id}>
-                  <PropertiesCard data={property} />
-                </div>
-              ))
-            ) : (
-              <div className="col-sm-12 text-center">
-                <h3 className="text-danger">No properties found</h3>
+      
+            {filteredProperties.map(property=>(
+              <div className="col-md-4" key={property._id}>
+                <PropertiesCard data={property} />
               </div>
-            )}
+            ))}
           </div>
           <div className="row">
             <div className="col-sm-12">

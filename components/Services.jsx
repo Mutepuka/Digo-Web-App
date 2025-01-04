@@ -22,7 +22,7 @@ const Services = () => {
                     <div className="card-box-c foo">
                         <div className="card-header-c d-flex">
                             <div className="card-box-ico">
-                                <span className="bi bi-calendar4-week"></span>
+                                <span className="bi bi-house-check"></span>
                             </div>
                             <div className="card-title-c align-self-center">
                                 <h2 className="title-c">Lifestyle</h2>
@@ -46,7 +46,7 @@ const Services = () => {
                     <div className="card-box-c foo">
                         <div className="card-header-c d-flex">
                             <div className="card-box-ico">
-                                <span className="bi bi-calendar4-week"></span>
+                                <span className="bi bi-cash"></span>
                             </div>
                             <div className="card-title-c align-self-center">
                                 <h2 className="title-c">Loans</h2>

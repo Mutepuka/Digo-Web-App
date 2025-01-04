@@ -354,6 +354,7 @@ a:hover{
     border-radius: 0;
     opacity: 1;
     transition: 0.3s;
+    border-radius: 10px;
 }
 .carousel-pagination .swiper-pagination-bullet-active{
     background-color: #2eca6a;

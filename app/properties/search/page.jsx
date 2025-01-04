@@ -235,9 +235,6 @@ const SearchResults = () => {
     );
   }
   
-
-  //console.log('filtered data', filteredProperties)
-
   return (
     <main id='main'>
     <section className="intro-single">

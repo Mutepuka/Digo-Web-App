@@ -14,10 +14,9 @@ const AboutUsCard = ({data}) => {
 
   // Combine paragraphs into an array
   const fullContentArray = [data.fparagraph, data.sparagraph, data.tparagraph];
-  const truncatedContent = `${data.fparagraph.substring(0, 800)}...`; 
+  const truncatedContent = `${data.fparagraph.substring(0, 100)}...`; 
   return (
-    <>
-        
+    <>  
     <div className="col-md-6 col-lg-5 ">
         <img
         src={urlFor(data.image)}

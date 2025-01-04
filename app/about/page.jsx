@@ -31,6 +31,9 @@ const About = () => {
     })
     
   }, []);
+  if(!about) return null;
+
+
   
   return (
     <main id="main">
