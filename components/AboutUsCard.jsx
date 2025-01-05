@@ -15,7 +15,7 @@ const AboutUsCard = ({data}) => {
         className='img-fluid'
         />
     </div>
-    <div className="col-md-6 col-lg-5 section-md-t3">
+    <div className="col-md-6 col-lg-6 section-md-t3">
         <div className="title-box-d">
         <h3 className="title-d">
             {data.fheading}
