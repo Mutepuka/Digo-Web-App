@@ -2,36 +2,20 @@
 
 import React,{useState} from 'react';
 import { urlFor } from '@libs/sanity';
+import Link from '@node_modules/next/link';
 
 const AboutUsCard = ({data}) => {
-
-    const [showMore, setShowmore] = useState(false);
-
-    //function to show more
-    const handleShowmore= ()=>{
-        setShowmore((prev) => !prev);
-    }
-
-  // Combine paragraphs into an array
-  const fullContentArray = [data.fparagraph, data.sparagraph, data.tparagraph];
-  const truncatedContent = `${data.fparagraph.substring(0, 100)}...`; 
+ 
   return (
     <>  
-    <div className="col-md-6 col-lg-5 ">
+    <div className="col-md-6 col-lg-5 image-about">
         <img
         src={urlFor(data.image)}
         alt='affilate program'
         className='img-fluid'
-        // width={460}
-        // height={660}
         />
     </div>
-    <div className="col-lg-2 d-none d-lg-block position-relative">
-        <div className="title-vertical d-flex justify-content-start">
-        <span>{data.name}</span>
-        </div>
-    </div>
-    <div className="col-md-6 col-lg-5 section-md-t3">
+    <div className="col-md-6 col-lg-6 section-md-t3 p-3 mx-4">
         <div className="title-box-d">
         <h3 className="title-d">
             {data.fheading}
@@ -39,21 +23,16 @@ const AboutUsCard = ({data}) => {
             <br/>{data.theading}
         </h3>
         </div>
+        
         <p className="color-text-a">
-        {showMore ? (
-            fullContentArray.map((para, index) => (
-              <React.Fragment key={index}>
-                {para}
-                <br />
-                <br />
-              </React.Fragment>
-            ))
-          ) : (
-            truncatedContent
-          )}
+        {data.fparagraph} 
         </p>
-        <div className="col-md-12 text-center">
-            <button onClick={handleShowmore} className="btn btn-a">  {showMore ? 'Show Less' : 'Show More'}</button>
+        <div className="col-md-12 text-left">
+        <Link href={`/about/${data._id}`} className="link-c link-icon">
+          Read More
+          <span className="bi bi-chevron-right"></span>
+      </Link>
+           
         </div>
     </div>
             </>

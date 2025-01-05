@@ -38,7 +38,7 @@ const Contact = () => {
                     </div>
                     <div className="icon-box-content table-cell">
                       <div className="icon-box-title">
-                        <h4 className="icon-title">Greetings</h4>
+                        <h4 className="icon-title">Say Hello</h4>
                       </div>
                       <div className="icon-box-content">
                         <p className="mb-1">

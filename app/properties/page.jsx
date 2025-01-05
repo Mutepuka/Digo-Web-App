@@ -6,6 +6,7 @@ import BreadCrumb from "@components/BreadCrumb";
 import PropertiesCard from "@components/PropertiesCard";
 import Pagination from "@components/Pagination";
 import "@styles/propertieslist.css";
+import LoadingSpinner from "@app/loading";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
@@ -88,6 +89,11 @@ const Properties = () => {
   };
 
   //conditio rendering
+  if(!filteredProperties){
+    return(
+      <LoadingSpinner/>
+    )
+  }
   
 
   return (

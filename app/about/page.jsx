@@ -1,6 +1,5 @@
 "use client";
 
-
 import React,{useState, useEffect} from 'react'
 import BreadCrumb from '@components/BreadCrumb';
 import Image from 'next/image';
@@ -31,14 +30,11 @@ const About = () => {
     })
     
   }, []);
-  if(!about) return null;
-
-
   
   return (
     <main id="main">
       <BreadCrumb
-      title="Unlocking Dreams, openning new doors"
+      title="Building Dreams, One Home at a Time"
       subtitle=""
       page="About"
       />
