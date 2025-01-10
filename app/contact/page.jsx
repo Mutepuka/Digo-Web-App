@@ -6,6 +6,7 @@ import ContactForm from '@components/ContactForm'
 
 const Contact = () => {
   return (
+    
     <main id="main">
       <BreadCrumb
       title='Contact Us'
@@ -28,8 +29,6 @@ const Contact = () => {
                   {/***contact form */}
                   <ContactForm/>
                 </div>
-
-                
                 <div className="col-md-5 section-md-t3">
                   <div className="icon-box section-b2">
                   <div className="contact-details"></div>
@@ -99,10 +98,6 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
-                
-
-
               </div>
             </div>
           </div>

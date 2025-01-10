@@ -6,3 +6,20 @@ signle agent css ============*/
 .agent-single .agent-avatar-box{
     margin-bottom: 2rem;
 }
+.agent-info-box .counter{
+    background: black;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+ }
+ .agent-info-box .counter span{
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0 0.5rem 0 0.3rem;
+ }
+ .agent-info-box img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+ }
