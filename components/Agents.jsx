@@ -10,7 +10,7 @@ const Agents = () => {
 
     useEffect(() => {
 
-        const query = `*[_type == 'agent'][0...3]|
+        const query = `*[_type == 'agent']|
         order(_createdAt desc){
         _id,
         name,
@@ -51,7 +51,7 @@ const Agents = () => {
                 </div>
             </div>
             <div className="row">
-                {agents && agents.length > 0 && agents.map(data=>(
+                {agents && agents.length > 0 && agents.slice(0,3).map(data=>(
                     <div className="col-md-4" key={data._id}>
                         <AgentCard agent={data}/>
                     </div>
