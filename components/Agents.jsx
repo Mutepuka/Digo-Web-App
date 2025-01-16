@@ -7,6 +7,9 @@ import AgentCard from './AgentCard';
 
 const Agents = () => {
     const [agents, setAgents] = useState([])
+    const [loading, setLoading] = useState(true);
+
+    //fetch agent data
 
     useEffect(() => {
 
