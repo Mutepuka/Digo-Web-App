@@ -89,14 +89,11 @@ const BlogPost = () => {
                                 <p className="color-text-a">
                                     {blog.tparagraph}
                                 </p>
-
-
                             </div>
                     </div>
                     <div className="col-md-12">
                         <Link href="#" className="btn btn-a">Sign Up</Link>
                     </div>
-                    
                 </div>
             </div>
         </section>

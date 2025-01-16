@@ -5,4 +5,7 @@ import { agent } from "./agent";
 import { propertytype } from "./propertytype";
 import { provincename } from "./provincename";
 import { about } from "./about";
-export const schemaTypes = [agent,about, propertytype, property, provincename, status, slides]
+import {agentrating} from "./agentrating";
+import {agentverification} from "./agentverification";
+
+export const schemaTypes = [agent,about, agentrating, agentverification, propertytype, property, provincename, status, slides]

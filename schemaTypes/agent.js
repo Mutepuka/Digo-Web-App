@@ -44,6 +44,18 @@ export const agent = defineType({
             }
         }),
         defineField({
+            name: 'agentrating',
+            type: 'reference',
+            title: 'Agent Rating',
+            to:[{type: 'agentrating'}]
+        }),
+        defineField({
+            name: 'agentverifcation',
+            type: 'reference',
+            title: 'Agent Verification',
+            to:[{type: 'agentverification'}]
+        }),
+        defineField({
             name: 'facebook',
             type: 'string',
             title: 'Facebook'
