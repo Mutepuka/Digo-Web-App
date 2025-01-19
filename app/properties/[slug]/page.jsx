@@ -11,7 +11,7 @@ import { useSearchParams } from 'next/navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
-import {Autoplay, Pagination } from 'swiper/modules';
+import {Pagination } from 'swiper/modules';
 import '@styles/singleproperty.css';
 
 const SingleProperty = () => {
