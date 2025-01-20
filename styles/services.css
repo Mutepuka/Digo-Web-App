@@ -7,10 +7,12 @@
 @media(max-width: 767px){
     .card-box-c{
         margin-bottom: 2rem;
+        /* border: 2px solid green; */
     }
 }
 .card-header-c{
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem 0 0 !important;
+    /* border: 2px solid red; */
 }
 .card-body-c{
     padding: 0.5rem 0.5rem 0 0.5rem;
