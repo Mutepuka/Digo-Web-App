@@ -89,7 +89,6 @@ const SingleProperty = () => {
       )
     }
     
-    
   return (
     <main id="main">
       <section className="intro-single">
@@ -188,7 +187,7 @@ const SingleProperty = () => {
                         <span>{property.type}</span>
                         </li>
                         <li className="d-flex justify-content-between">
-                        <strong>Satus:</strong>
+                        <strong>Status:</strong>
                         <span>{property.propstatus}</span>
                         </li>
                         <li className="d-flex justify-content-between">
