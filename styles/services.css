@@ -1,64 +1,64 @@
 /*=================================
 //--//--> SERVICES - CARD-C
 ===============================*/
-.card-box-c{
+.services .card-box-c{
     position: relative;
 }
 @media(max-width: 767px){
-    .card-box-c{
+    .services .card-box-c{
         margin-bottom: 2rem;
         /* border: 2px solid green; */
     }
 }
-.card-header-c{
+.services .card-header-c{
     padding: 0 1rem 0 0 !important;
     /* border: 2px solid red; */
 }
-.card-body-c{
+.services .card-body-c{
     padding: 0.5rem 0.5rem 0 0.5rem;
 }
 @media(max-width: 767px){
-    .card-body-c{
+    .services .card-body-c{
         padding: 0;
     }
 }
-.card-footer-c{
+.services .card-footer-c{
     padding-left: 0.5rem;
 }
-.card-box-ico{
+.services .card-box-ico{
     padding: 1rem 3rem 1rem 0;
- /* border: 5px solid #2eca6a;  */
+    /* border: 5px solid #ca792e; */
 }
-.card-box-ico span{
+.services .card-box-ico span{
     font-size: 2.5rem;
     color: #000;
 }
-.title-c{
+.services .title-c{
     font-size: 1rem;
     font-weight: 600;
     margin-left: -40px;
 }
 @media (min-width: 768px){
-    .title-c{
+    .services .title-c{
         font-size: 1.6rem;
     }
 }
 @media (min-width: 992px){
-    .title-c{
+    .services .title-c{
         font-size: 1.6rem;
     }
 }
 @media (min-width: 640px){
-    .title-c{
+    .services .title-c{
         font-size: 1.6rem;
     }
 }
 @media (max-width: 640px){
-    .title-c{
+    .services .title-c{
         font-size: 1.5rem;
     }
 }
-.card-body-c .content-c{
+.services .card-body-c .content-c{
     font-weight: 500;
     color: #555;
     letter-spacing: initial;

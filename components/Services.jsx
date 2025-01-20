@@ -16,9 +16,8 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className="row">
-
-                <div className="col-md-4">
+            <div className="row services">
+                <div className="col-md-4 ">
                     <div className="card-box-c foo">
                         <div className="card-header-c d-flex">
                             <div className="card-box-ico">
