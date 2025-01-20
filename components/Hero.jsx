@@ -15,7 +15,7 @@ const Hero = () => {
 
 
   return (
-    <>
+    <div className='hero-wrapper'>
     <Swiper
         pagination={{
           dynamicBullets: true,
@@ -38,7 +38,7 @@ const Hero = () => {
       ))}
         
       </Swiper>
-    </>
+    </div>
   )
 }
 

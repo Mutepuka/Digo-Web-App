@@ -535,6 +535,11 @@ a:hover{
         rgba(0,0,0,0.65)90%
     );
 }
+/******** hero page ********/
+.hero-wrapper .intro{
+    /* border: 3px solid blue; */
+    height: 100vh !important; 
+}
 
 /********* Intro Signle *********/
 .intro-single{
