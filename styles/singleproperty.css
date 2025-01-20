@@ -127,12 +127,14 @@
     .intro-single{
         padding-bottom: 0 !important;
         padding-top: 6rem !important;
+        border: 2px solid blue;
     }
     .intro{
         padding: 0 !important;
         margin: 0 !important;
         height: 480px !important;
         margin-bottom: 0.5rem !important;
+        border: 2px solid red;
         
     }
     .intro img{
@@ -155,12 +157,14 @@
     .intro-single{
         padding-bottom: 0 !important;
         padding-top: 6rem !important;
+        border: 2px solid brown;
     }
     .intro{
         padding: 0 !important;
         margin: 0 !important;
         height: 450px !important;
         margin-bottom: 0.5rem !important;
+        border: 3px dashed yellow;
         
     }
     .intro img{
@@ -190,6 +194,7 @@
         height: 450px !important;
         width: 100%;
         margin-bottom: 0.5rem !important;
+        border: 3px solid pink;
         
     }
     .intro img{
