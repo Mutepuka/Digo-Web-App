@@ -48,6 +48,31 @@
     /* border: 3px dashed brown; */
     
 }
+.badge-holder {
+    position: absolute;
+    left: 20%;/* Adjust the position if needed */
+    z-index: 10; /* Ensure it appears above other elements */
+    padding: 10px; /* Optional: Add some padding */
+    background: rgba(255, 255, 255, 0.8); /* Optional: Add a slight background to stand out */
+    border-radius: 5px; /* Optional: Round the edges */
+    text-align: center;
+  }
+  
+  .badge-holder span {
+    font-size: 5rem; /* Set the size of the icon */
+    color: #2eca6a; /* Make it orange */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .badge-holder h2.stas {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Adjust the text size */
+    color: #333; /* Optional: Text color */
+    font-weight: bold; /* Make it stand out */
+  }
+  
 @media (min-width: 768px){
     .title-c{
         font-size: 0.9rem;

@@ -19,6 +19,13 @@ const SingleProperty = () => {
     const [property, setProperty] = useState(null)
     const path= usePathname();
     const slug = path.split('/').pop();
+    const [form, setForm] = useState({
+      name: '',
+      email: '',
+      message: '',
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [feedback, setFeedback] = useState(null);
 
     //aysnc function to get the property detais
     const getProperty = async()=>{
@@ -79,6 +86,82 @@ const SingleProperty = () => {
       return formatter.format(amount);
     }
 
+    //handle form submit
+    const handleInputChange = (e) => {
+      setForm({ ...form, [e.target.id]: e.target.value });
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setFeedback(null);
+  
+      try {
+        const response = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user: {
+              name: form.name,
+              email: form.email,
+              message: form.message,
+            },
+            property: {
+              addressOne: property.addressOne,
+              addressTwo: property.addressTwo,
+              agent: {
+                email: property.agent.email,
+              },
+            },
+          }),
+        });
+  
+        if (response.ok) {
+          setFeedback({ success: true, message: 'Email sent successfully!' });
+          setForm({ name: '', email: '', message: '' });
+        } else {
+          const error = await response.json();
+          setFeedback({ success: false, message: error.message });
+        }
+      } catch (error) {
+        setFeedback({ success: false, message: 'An error occurred. Please try again.' });
+      } finally {
+        setIsSubmitting(false);
+      }
+
+      // try {
+      //   const response = await fetch('/api/sendEmail', {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify({
+      //       user: {
+      //         name: form.name,
+      //         email: form.email,
+      //         message: form.message,
+      //       },
+      //       property: {
+      //         addressOne: property.addressOne,
+      //         addressTwo: property.addressTwo,
+      //         agent: { email: property.agent.email },
+      //       },
+      //     }),
+      //   });
+    
+      //   const data = await response.json();
+      //   if (!response.ok) throw new Error(data.error || 'Unknown error');
+      //   console.log('Email sent:', data.message);
+      // } catch (error) {
+      //   console.error('Failed to send email:', error.message);
+      // }
+    };
+
+    useEffect(() => {
+      if (feedback) {
+        const timer = setTimeout(() => setFeedback(null), 5000);
+        return () => clearTimeout(timer);
+      }
+    }, [feedback]);
+
     if(!property){
       return(
         <div className="container">
@@ -129,6 +212,23 @@ const SingleProperty = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
+              <div className="badge-holder">
+              <span><i
+    className="bi bi-patch-check-fill"
+    style={{
+      color:
+      property.propstatus === 'Rent'
+          ? 'orange'
+          : property.propstatus === 'Sold' || property.propstatus === 'Rented'
+          ? 'green'
+          : 'black',
+    }}
+  ></i></span>
+              <h2 className="stas">
+                {property.propstatus}
+              </h2>
+              </div>
+              
               <Swiper
               pagination={{
                 dynamicBullets: true,
@@ -323,53 +423,68 @@ const SingleProperty = () => {
                     </div>
                   </div>
                 </div>
+
                 {/**contact form */}
+
                 <div className="col-md-12 col-lg-4">
-                  <div className="property-contact">
-                    <div className="form-a">
-                      <div className="row">
-                        <div className="col-md-12 mb-1">
-                          <div className="form-group">
-                            <input 
-                            type="text" 
-                            id='inputName'
-                            placeholder='Name *'
-                            required
-                            className="form-control form-control-lg form-control-a" />
-                          </div>
-                        </div>
-
-                        <div className="col-md-12 mb-1">
-                          <div className="form-group">
-                            <input 
-                            type="email" 
-                            id='inputEmail'
-                            placeholder='Email *'
-                            required
-                            className="form-control form-control-lg form-control-a" />
-                          </div>
-                        </div>
-
-                        <div className="col-md-12 mb-1">
-                          <div className="form-group">
-                            <textarea 
-                            name="message" 
-                            id="textMessage" 
-                            placeholder='Comment *'
-                            cols="45"
-                            rows="8"
-                            className="form-control"></textarea>
-                          </div>
-                        </div>
-                        <div className="col-md-12 mt-3">
-                          <button type='submit' className="btn btn-a">
-                            Send Message
-                          </button>
-                        </div>
-                      </div>
+              <div className="property-contact">
+                <div className="form-a">
+                  <h4>Contact Agent</h4>
+                  {feedback && (
+                    <div className={`alert ${feedback.success ? 'alert-success' : 'alert-danger'}`}>
+                      {feedback.message}
                     </div>
-                  </div>
+                  )}
+                  <form onSubmit={handleSubmit}>
+                  <div className="col-md-12 mb-1">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        id="name"
+                        value={form.name}
+                        onChange={handleInputChange}
+                        placeholder="Name *"
+                        required
+                        className="form-control form-control-lg form-control-a"
+                      />
+                    </div>
+                    </div>
+                    <div className="col-md-12 mb-1">
+                    <div className="form-group">
+                      <input
+                        type="email"
+                        id="email"
+                        value={form.email}
+                        onChange={handleInputChange}
+                        placeholder="Email *"
+                        required
+                        className="form-control form-control-lg form-control-a"
+                      />
+                    </div>
+                    </div>
+                    <div className="col-md-12 mb-1">
+                    <div className="form-group">
+                      <textarea
+                        id="message"
+                        value={form.message}
+                        onChange={handleInputChange}
+                        placeholder="Message *"
+                        required
+                        className="form-control"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                    </div>
+                    <div className="col-md-12 mt-3">
+                    <button type="submit" className="btn btn-a" disabled={isSubmitting}>
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </button>
+                    </div>
+                  </form>
                 </div>
+              </div>
+            </div>
+          
               </div>
             </div>
           </div>
