@@ -150,7 +150,18 @@
         font-size: 1.9rem;
         margin-left: -40px;
     }
+    .badge-holder {
+    position: absolute;
+    left: 18%;/* Adjust the position if needed */
+    z-index: 10; /* Ensure it appears above other elements */
+    padding: 10px; /* Optional: Add some padding */
+    background: rgba(255, 255, 255, 0.8); /* Optional: Add a slight background to stand out */
+    border-radius: 5px; /* Optional: Round the edges */
+    text-align: center;
+    
+  }
 }
+
 @media (min-width: 576px) and (max-width: 768px){
     .intro-single{
         padding-bottom: 0 !important;
@@ -178,6 +189,15 @@
     .section-t3{
         padding-top: 1.2rem;
     }
+    .badge-holder {
+        position: absolute;
+        left: 12%;/* Adjust the position if needed */
+        z-index: 10; /* Ensure it appears above other elements */
+        padding: 10px; /* Optional: Add some padding */
+        background: rgba(255, 255, 255, 0.8); /* Optional: Add a slight background to stand out */
+        border-radius: 5px; /* Optional: Round the edges */
+        text-align: center;
+      }
 }
 @media (min-width: 480px) and (max-width: 576px){
     .intro-single{
@@ -205,6 +225,15 @@
     .section-t3{
         padding-top: 0.5rem;
     }
+    .badge-holder {
+        position: absolute;
+        left: 10%;/* Adjust the position if needed */
+        z-index: 10; /* Ensure it appears above other elements */
+        padding: 10px; /* Optional: Add some padding */
+        background: rgba(255, 255, 255, 0.8); /* Optional: Add a slight background to stand out */
+        border-radius: 5px; /* Optional: Round the edges */
+        text-align: center;
+      }
 
 }
 @media (min-width: 360px) and (max-width: 480px){
@@ -233,5 +262,14 @@
     .section-t3{
         padding-top: 0.5rem;
     }
+    .badge-holder {
+        position: absolute;
+        left: 10%;/* Adjust the position if needed */
+        z-index: 10; /* Ensure it appears above other elements */
+        padding: 10px; /* Optional: Add some padding */
+        background: rgba(255, 255, 255, 0.8); /* Optional: Add a slight background to stand out */
+        border-radius: 5px; /* Optional: Round the edges */
+        text-align: center;
+      }
 
 }
