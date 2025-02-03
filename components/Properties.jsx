@@ -25,8 +25,9 @@ const Properties = () => {
         beds,
         baths,
         price,
+        "type": propertytype->name,
         "slug": slug.current,
-        "propstatus": status->name,
+        "status": status->name,
         garages,
         "imageUrl": images[0].asset->url
       }`;
