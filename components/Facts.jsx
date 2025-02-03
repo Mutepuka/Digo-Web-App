@@ -1,5 +1,5 @@
 import React from 'react';
-import { counterData } from '@utils/CounterItems';
+import { counterData } from '@utils/Items';
 import CounterItems from './CounterItems';
 
 const Facts = () => {
