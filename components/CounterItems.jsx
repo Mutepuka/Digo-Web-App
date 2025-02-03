@@ -1,6 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
-import '@styles/counteritems.css';
+import '@styles/items.css';
 
 const CounterItems = ({item}) => {
   return (
