@@ -20,19 +20,20 @@ const Nav = () => {
         }
     }, [scroll]);
 
-const handleNavClick = (id)=>{
-    const newNavList= navList.map( nav =>{
-        nav.active = false;
-        if (nav.id === id) nav.active = true;
-        return nav;
-    });
-    setNavList(newNavList);
+    const handleNavClick = (id)=>{
+        //set active class
+        const newNavList = navList.map((nav) => ({
+            ...nav,
+            active: nav.id === id,
+          }));
+          setNavList(newNavList);
+        
 
-}
-const handleOpenSearchForm=()=>{
-    document.body.classList.remove('box-collapse-closed');
-    document.body.classList.add('box-collapse-open');
-}
+    }
+    const handleOpenSearchForm=()=>{
+        document.body.classList.remove('box-collapse-closed');
+        document.body.classList.add('box-collapse-open');
+    }
     
 
   return (
@@ -46,12 +47,13 @@ const handleOpenSearchForm=()=>{
              type='button'
              data-bs-toggle='collapse'
              data-bs-target='#navbarDefault'
-             aria-controls='false'
+             aria-controls='navbarDefault'
              aria-label='Toggle navigation'
              >
                 <span></span>
                 <span></span>
                 <span></span>
+            
             </button>
             <a className='navbar-brand text-brand' href='/'>
                 Digo <span className='color-b'>Estate</span>
