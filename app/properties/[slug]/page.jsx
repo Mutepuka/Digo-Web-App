@@ -214,21 +214,21 @@ const SingleProperty = () => {
             <div className="col-lg-8">
               <div className="badge-holder">
               <span><i
-    className="bi bi-patch-check-fill"
-    style={{
-      color:
-      property.propstatus === 'Rent'
-          ? 'orange'
-          : property.propstatus === 'Sold' || property.propstatus === 'Rented'
-          ? 'green'
-          : 'black',
-    }}
-  ></i></span>
+                className="bi bi-patch-check-fill"
+                style={{
+                  color:
+                  property.propstatus === 'Rent'
+                      ? 'orange'
+                      : property.propstatus === 'Sold' || property.propstatus === 'Rented'
+                      ? 'green'
+                      : 'black',
+                }}>
+                </i>
+                </span>
               <h2 className="stas">
                 {property.propstatus}
               </h2>
               </div>
-              
               <Swiper
               pagination={{
                 dynamicBullets: true,

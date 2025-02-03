@@ -5,13 +5,15 @@ import Hero from '@components/Hero';
 import Services from '@components/Services';
 import Properties from '@components/Properties';
 import Agents from '@components/Agents';
+import Facts from '@components/Facts';
 
 const Home = () => {
   return (
     <>
     <Hero/>
     <main id="main">
-      <Services/>
+      <Facts/>
+      {/* <Services/> */}
       <Properties/>
       <Agents/>
     </main>
