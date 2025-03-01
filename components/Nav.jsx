@@ -88,11 +88,7 @@ const Nav = () => {
             >
                 <i className='bi bi-search'></i>
             </button>
-
-            {/* <a href='/sign-up' className='btn btn-signIn'> Sign In</a> */}
-
         </div>
-        
     </nav>
   )
 }
