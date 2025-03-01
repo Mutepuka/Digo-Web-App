@@ -2,13 +2,13 @@ const slides = [
   {
     id: "1",
     bgImg: "/assets/images/slide-1.jpg", // Updated path
-    subtitle: "Lusaka, Kabulonga",
+    subtitle: "Lusaka, Eureka Park",
     code: "78345",
     number: "204",
-    lineone: "chikemwiko road",
+    lineone: "Eureka Park",
     linetwo: "Bishops Road",
     type: "Rent",
-    price: "367,789"
+    price: "98,000.00"
   },
   {
     id: "2",

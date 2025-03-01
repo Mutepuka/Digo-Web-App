@@ -3,7 +3,7 @@
 import React,{useState, useEffect} from 'react'
 import BreadCrumb from '@components/BreadCrumb';
 import Image from 'next/image';
-import aboutBannerImg from '../../public/assets/slide-about-1.jpg';
+import aboutBannerImg from '../../../public/assets/slide-about-1.jpg';
 import './styles.css'
 import { client } from '@libs/sanity';
 import AboutUsCard from '@components/AboutUsCard';

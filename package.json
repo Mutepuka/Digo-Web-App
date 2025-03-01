@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.12.0",
+    "@hookform/resolvers": "^4.1.2",
+    "@prisma/client": "^6.4.1",
+    "@prisma/extension-accelerate": "^1.2.2",
     "@sanity/client": "^6.18.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.36.0",
@@ -23,11 +27,15 @@
     "react": "^18",
     "react-countup": "^6.5.3",
     "react-dom": "^18",
+    "react-hook-form": "^7.54.2",
+    "react-toastify": "^11.0.3",
     "swiper": "^11.1.1",
-    "swr": "^2.2.5"
+    "swr": "^2.2.5",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "postcss": "^8",
+    "prisma": "^6.4.1",
     "tailwindcss": "^3.4.1"
   }
 }

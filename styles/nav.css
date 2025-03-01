@@ -191,3 +191,13 @@
     transform: rotate(-135deg);
     opacity: 0.9;
 }
+.btn.btn-signIn{
+    background-color: #000;
+    color: #fff;
+    margin-left: 2rem;
+    border-radius: 10px;
+}
+.btn.btn-signIn:hover{
+    background-color: #f77307;
+    color: #fff;
+}
