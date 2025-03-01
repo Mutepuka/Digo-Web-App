@@ -1,5 +1,5 @@
 "use client";
-import { useUser } from "@clerk/nextjs/dist/types";
+import { useUser } from "@clerk/nextjs";
 
 
 //functional component
