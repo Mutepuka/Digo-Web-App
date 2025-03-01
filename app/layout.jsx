@@ -1,4 +1,3 @@
-
 import { Poppins } from 'next/font/google';
 import {ClerkProvider,} from '@clerk/nextjs'
 import 'bootstrap/dist/css/bootstrap.min.css';
