@@ -8,8 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { UserRegistrationSchema } from "@libs/auth.schema";
 import { onCompleteRegistration } from "@actions/auth";
 
-
-export const useSignUpForm = () => {
+const useSignUpForm = () => {
     const [loading, setLoading] = useState(false);
     const { signUp, isLoaded, setActive } = useSignUp();
     const router = useRouter();
@@ -70,4 +69,7 @@ export const useSignUpForm = () => {
     });
 
     return { methods, onHandleSubmit, onGenerateOTP, loading };
-};
+
+}
+
+export default useSignUpForm

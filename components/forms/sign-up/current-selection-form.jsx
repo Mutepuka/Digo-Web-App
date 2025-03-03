@@ -6,7 +6,7 @@ const CurrentSelectionForm = ({register,userType, setUserType}) => {
     <div className='container-fluid'>
         <div className="row">
             <div className="col-md-12 p-4">
-                <h2>Create An Account</h2>
+                <h4>Create An Account</h4>
                 <p>Tell us about yourself. what made you interested in real esate and if someone refered you to this website</p>
                 <UserTypeCard 
                 register={register}

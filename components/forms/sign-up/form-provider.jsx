@@ -83,7 +83,6 @@ const SignUpFormProvider = ({children}) => {
                 {children}
             </div>
         </form>
-
       </FormProvider>
     </AuthContextProvider>
   )

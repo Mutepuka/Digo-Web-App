@@ -1,4 +1,6 @@
+import ButtonHandler from '@components/forms/sign-up/ButtonHandler'
 import SignUpFormProvider from '@components/forms/sign-up/form-provider'
+import HighLightBar from '@components/forms/sign-up/hightlight-bar'
 import RegistrationFormStep from '@components/forms/sign-up/registration-step'
 import React from 'react'
 
@@ -8,9 +10,9 @@ const PageSignUp = () => {
       <div className="col-md-8">
         <SignUpFormProvider>
           <div className="">
-            
-            <RegistrationFormStep></RegistrationFormStep>
-
+            <RegistrationFormStep/>
+            <ButtonHandler/>
+            <HighLightBar/>
           </div>
         </SignUpFormProvider>
       </div>

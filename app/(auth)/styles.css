@@ -59,8 +59,7 @@
   }
   .branding img{
     object-fit: 'cover';
-    width: 20%;
-      
+    width: 20%;  
   }
   .branding p{
     font-weight: 500;
@@ -100,7 +99,7 @@
   border-radius: 5px;
 }
 .person-icon{
-  font-size: 40px;
+  font-size: 30px;
   color: #7e7a7a;
   border: 2px solid #9b8c8c;
   border-radius: 5px;
@@ -115,7 +114,7 @@
   background-color: white;
   border: 2px solid #2eca6a;
   cursor: pointer;
-  margin-top: 2rem;
+  margin-top: 1rem;
   
 }
 
@@ -123,7 +122,7 @@
   background-color: rgb(245, 245, 245);
   border: 2px solid #9b8c8c;
   cursor: pointer;
-  margin-top: 2rem
+  margin-top: 1rem
  
 }
 .radio-btn-up-active{
@@ -144,4 +143,40 @@
   top: 10px;
   width: 20px;
   height: 20px;
+}
+.continue-btn{
+  justify-content: center;
+  align-items: center;
+}
+.continue-btn .btn-a-continue{
+  background-color: #000;
+  color: #fff;
+  width: 94%;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 18px;
+  
+}
+.continue-btn p{
+  font-weight: 500;
+  font-size: 20px;
+  padding-top: 1rem;
+}
+/********************* hight lights
+**********************/
+.hightlight-wrapper{
+  margin-top: 3rem;
+}
+.active-hightlight{
+  background-color: #ca8c2e;
+  height: 10px;
+  border-radius: 10px;
+  width: 30%;
+}
+.inactive-highlight{
+  background-color: #bdbdbe;
+  height: 10px;
+  border-radius: 10px;
+  width: 30%;
+
 }

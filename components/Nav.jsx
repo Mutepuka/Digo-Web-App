@@ -56,7 +56,12 @@ const Nav = () => {
             
             </button>
             <a className='navbar-brand text-brand' href='/'>
-                Digo <span className='color-b'>Estate</span>
+            <img
+            src='./assets/digo_estate.png'
+            alt='digo logo'
+            className='img-fluid logo-home'
+            />
+                igo <span className='color-a'>Estate</span>
             </a>
 
             <div className='collapse navbar-collapse justify-content-center' id='navbarDefault'>
@@ -88,6 +93,8 @@ const Nav = () => {
             >
                 <i className='bi bi-search'></i>
             </button>
+            {/* <a href='/sign-up' className='btn btn-signIn'> Sign In</a> */}
+
         </div>
     </nav>
   )

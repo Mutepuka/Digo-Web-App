@@ -103,6 +103,11 @@ a:hover{
 .no-margin{
     margin: 0;
 }
+/***************** Home logo************/
+.logo-home{
+    width: 30px;
+    object-fit: contain;
+}
 /*********** Nav Pill *************/
 .nav-pills-a{
     text-decoration: none;

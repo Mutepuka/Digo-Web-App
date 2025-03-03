@@ -21,10 +21,7 @@ const PageLayout = async ({children}) => {
           </div>
           <div className="col-md-8 ">
           <p>Effortless Sales, Exceptional Homes Real Estate Made Easy! 🏠✨</p>
-
           </div>
-       
-        
       </div>
       <div className="col-md-8 d-flex flex-column home-steps">
         <div className="col-md-4 home-bac-btn">
