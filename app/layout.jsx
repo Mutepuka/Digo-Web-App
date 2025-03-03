@@ -14,7 +14,7 @@ export const metadata={
     title: 'Digo',
     description: 'Real Estate Adversting Platforms',
     icons:{
-        icon:'/assets/images/slide-1.jpg'
+        icon:'/assets/digo_estate.png'
     }
 }
 
