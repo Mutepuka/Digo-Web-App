@@ -6,14 +6,14 @@ import React from 'react'
 
 const PageSignUp = () => {
   return (
-    <div className='d-flex'>
-      <div className="col-md-8">
+    <div className='d-flex w-100 h-100 '>
+      <div className="col-md-8 d-flex h-100 flex-column">
         <SignUpFormProvider>
-          <div className="">
+          <div className="d-flex flex-column gap-3 home-sign-up">
             <RegistrationFormStep/>
-            <ButtonHandler/>
-            <HighLightBar/>
+            <ButtonHandler/> 
           </div>
+          <HighLightBar/>
         </SignUpFormProvider>
       </div>
     </div>

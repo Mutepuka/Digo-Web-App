@@ -4,6 +4,15 @@ import { useFormContext } from 'react-hook-form';
 import React,{useState} from 'react';
 import { useAuthContextHook } from '@context/use-auth-context';
 import CurrentSelectionForm from './current-selection-form';
+import AccountDetailsForm from './accounts-details-form';
+import dynamic from 'next/dynamic';
+import LoadingSpinner from '@app/loading';
+
+//import some components dynmically
+const DetailsForm = dynamic(()=> import ('./accounts-details-form'),{
+  ssr: false,
+  loading: LoadingSpinner
+})
 
 const RegistrationFormStep = () => {
     const {register,formState,setValue}= useFormContext();
@@ -23,9 +32,10 @@ const RegistrationFormStep = () => {
                 setUserType={setOnUserType}
                 />
             )
-    
-        default:
-            break;
+        case 2:
+          return(
+            <DetailsForm/>
+          )
     }
   return (
     <div>RegistrationFormStep</div>

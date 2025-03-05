@@ -57,7 +57,7 @@ const Nav = () => {
             </button>
             <a className='navbar-brand text-brand' href='/'>
             <img
-            src='./assets/digo_estate.png'
+            src='/assets/digo_estate.png'
             alt='digo logo'
             className='img-fluid logo-home'
             />

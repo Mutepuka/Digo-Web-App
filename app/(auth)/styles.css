@@ -98,6 +98,9 @@
   transition: all 0.5s ease;
   border-radius: 5px;
 }
+.home-sign-up{
+  height: 70vh;
+}
 .person-icon{
   font-size: 30px;
   color: #7e7a7a;
@@ -165,7 +168,7 @@
 /********************* hight lights
 **********************/
 .hightlight-wrapper{
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 .active-hightlight{
   background-color: #ca8c2e;
