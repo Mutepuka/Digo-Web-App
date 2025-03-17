@@ -18,7 +18,7 @@ const CurrentSelectionForm = ({register,userType, setUserType}) => {
                 />
                 <UserTypeCard 
                 register={register}
-                title='Estemed User'
+                title='User'
                 userType={userType}
                 setUserType={setUserType}
                 value='user'

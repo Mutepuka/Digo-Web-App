@@ -1,11 +1,10 @@
 "use client";
 import { useAuthContextHook } from "@context/use-auth-context";
 import { useFormContext } from "react-hook-form";
-import { useState } from "react";
 import useSignUpForm from "@hooks/sign-up/useSignUpForm";
 import Link from "next/link";
 
-const ButtonHandler = ({ children, onClick }) => {
+const ButtonHandler = () => {
     //destructure the useAuthContextHoo
     const {currentStep, setCurrentStep}= useAuthContextHook();
     const {formState,getFieldState,getValues}= useFormContext();
@@ -19,7 +18,7 @@ const ButtonHandler = ({ children, onClick }) => {
     if(currentStep === 3){
         return(
             <div className="col-md-12 flex-column d-flex continue-btn ">
-                <button class="btn btn-a" type="submit">Create Account</button>
+                <button className="btn btn-a-create" type="submit">Create Account</button>
                 <p>Already have an account?
                 <Link href="/sign-in">Sign In</Link>
                 </p>
@@ -31,7 +30,7 @@ const ButtonHandler = ({ children, onClick }) => {
         return(
             <div className="col-md-12 flex-column d-flex continue-btn">
                 <button
-                class="btn btn-a-continue" 
+                className="btn btn-a-continue" 
                 type="submit"
                 {...isName && isEmail && isPassword && {onClick:()=>onGenerateOTP(getValues('email'),getValues('password'),setCurrentStep)}}
                 >Continue</button>
@@ -46,7 +45,7 @@ const ButtonHandler = ({ children, onClick }) => {
     return(
         <div className="col-md-12 flex-column d-flex continue-btn">
             <button
-            class="btn btn-a-continue" 
+            className="btn btn-a-continue" 
             type="submit"
             onClick={()=>setCurrentStep((prev)=>prev+1)}
             >Continue</button>

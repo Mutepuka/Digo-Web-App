@@ -82,6 +82,7 @@
   .home-bac-btn{
     padding-top: 4rem;
     font-size: 22px;
+    padding-bottom: 1rem;
   }
   
 .home-bac-btn a{
@@ -99,7 +100,7 @@
   border-radius: 5px;
 }
 .home-sign-up{
-  height: 70vh;
+  /* height: 70vh; */
 }
 .person-icon{
   font-size: 30px;
@@ -165,6 +166,19 @@
   font-size: 20px;
   padding-top: 1rem;
 }
+.continue-btn .btn-a-create{
+  background-color: #000;
+  color: white;
+  width: 94%;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 18px;
+}
+.continue-btn .btn-a-create:hover{
+  background-color: #000;
+  color: white;
+}
+
 /********************* hight lights
 **********************/
 .hightlight-wrapper{
@@ -182,4 +196,14 @@
   border-radius: 10px;
   width: 30%;
 
+}
+
+/******************
+form class csss****************/
+.form-class{
+  border-radius: 10px;
+  padding: 5px;
+  margin: 2px;
+  border: 2px solid #a5a5a5;
+  font-size: 20px;
 }
