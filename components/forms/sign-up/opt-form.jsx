@@ -14,7 +14,7 @@ const OTPForm = ({onOTP,setOnOTP}) => {
     <p>Enter the onetime passcode that was sent to your email;</p>
     <div className="w-100 d-flex justify-center py-3 opt-wrapper">
       <OTPInput
-      opt={onOTP}
+      otp={onOTP}
       setOTP={setOnOTP}
       />
   
