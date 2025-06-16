@@ -37,6 +37,7 @@ const PilotProgram = () => {
                 <i className="bi bi-building text-warning display-4 mb-3"></i>
                 <h3 className="text-dark">Exciting New Properties Coming Soon!</h3>
                 <p className="text-muted">
+                    
                   We're crafting exceptional living spaces that will redefine modern living. 
                   Our team is working diligently to bring you premium real estate options 
                   in the most sought-after locations.
