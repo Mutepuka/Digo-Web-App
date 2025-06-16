@@ -2,21 +2,13 @@ export const USER_REGISTRATION_FORM =[
     {
         id: '1',
         inputType: 'input',
-        placeholder: 'Full Name',
-        name: 'fullname',
-        label: 'fullname',
-        type: 'text'
-    },
-    {
-        id: '2',
-        inputType: 'input',
         placeholder: 'Email',
         name: 'email',
         label: 'email',
         type: 'email'
     },
     {
-        id: '3',
+        id: '2',
         inputType: 'input',
         placeholder: 'Confirm Email',
         name: 'confirmEmail',
@@ -24,7 +16,7 @@ export const USER_REGISTRATION_FORM =[
         type: 'email'
     },
     {
-        id: '4',
+        id: '3',
         inputType: 'input',
         placeholder: 'Password',
         name: 'password',
@@ -32,7 +24,7 @@ export const USER_REGISTRATION_FORM =[
         type: 'password'
     },
     {
-        id: '5',
+        id: '4',
         inputType: 'input',
         placeholder: 'Conform Password',
         name: 'confirmPassword',

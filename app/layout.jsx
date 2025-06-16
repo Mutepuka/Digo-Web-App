@@ -21,8 +21,8 @@ export const metadata={
 
 const RootLayout= ({children})=>{
     return(
-        <ClerkProvider>
-        <html lang='en'>
+        <ClerkProvider dynamic>
+        <html lang='en' suppressHydrationWarning>
             <body className={poppins.variable}>
                 <div className='app'>
                 <Toaster position="top-right" />

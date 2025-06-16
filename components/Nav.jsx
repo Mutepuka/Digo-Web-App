@@ -3,11 +3,14 @@
 import {useState,useEffect} from 'react';
 import Link from 'next/link';
 import nav from '@data/nav';
+import {ClerkLoaded, SignedIn, SignInButton, UserButton, useUser} from '@clerk/nextjs';
+import { PackageIcon, ShoppingBag,HousePlug } from 'lucide-react';
 import '@styles/nav.css';
 
 const Nav = () => {
     const [scroll, setScroll] = useState(0);
     const [navList, setNavList] = useState(nav);
+     const {user}= useUser();
 
     useEffect(() => {
         window.addEventListener('scroll',()=>{
@@ -83,7 +86,35 @@ const Nav = () => {
                     ))}
                 </ul>
             </div>
+            <div className='d-flex justify-content-end align-items-center gap-3'>
+            {/** user area login or my orders */}
+            <ClerkLoaded>
+                <SignedIn>
+                    <Link href='/pilot'
+                    className='mt-0 mt-lg-1'>
+                        {/* <PackageIcon className='w-6 h-6'/> */}
+                        <HousePlug />
+                    </Link>
+                </SignedIn>
 
+                {user ?(
+                    <div className='mt-0 mt-lg-2'>
+                        <UserButton/>
+                        
+                    </div>
+                ):(
+                    <div className="">
+                    <SignInButton mode='modal'>
+                        <button className='btn btn-link'>
+                        <span className="fs-5 hover-effect cursor-pointer fw-semibold text-black-50 d-sm-block">Login</span>
+                        </button>
+                        
+                    </SignInButton>
+                    </div>
+                )}
+                
+
+            </ClerkLoaded>
             <button
             type='button'
             className='btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse'
@@ -93,7 +124,12 @@ const Nav = () => {
             >
                 <i className='bi bi-search'></i>
             </button>
-            {/* <a href='/sign-up' className='btn btn-signIn'> Sign In</a> */}
+
+            </div>
+            
+
+            
+            
 
         </div>
     </nav>

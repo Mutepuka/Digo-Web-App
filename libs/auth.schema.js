@@ -3,7 +3,7 @@ import { z } from "zod";
 export const UserRegistrationSchema = z
   .object({
     type: z.string().min(1),
-    fullname: z.string().min(4, { message: "Your fullname must be at least 4 characters" }),
+    // fullname: z.string().min(4, { message: "Your fullname must be at least 4 characters" }),
     email: z.string().email({ message: "Incorrect email format" }),
     confirmEmail: z.string().email(),
     password: z

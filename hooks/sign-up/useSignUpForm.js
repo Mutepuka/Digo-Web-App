@@ -61,39 +61,48 @@ const useSignUpForm = () => {
   // Handle Form Submission
   const onHandleSubmit = methods.handleSubmit(async (values) => {
     if (!isLoaded) return;
-
+  
     try {
       setLoading(true);
-
+  
       // Validate OTP
       if (!values.otp || values.otp.trim() === "") {
         toast.error("OTP is required!");
         return;
       }
-
+  
       // Attempt OTP verification
       const completeSignUp = await signUp.attemptEmailAddressVerification({
         code: values.otp,
       });
-
+  
       // Check if OTP verification was successful
       if (completeSignUp.status !== "complete") {
         toast.error("OTP verification failed. Please check the code and try again.");
         return;
       }
-
+  
       // Complete user registration
       if (completeSignUp.status === "complete" && signUp.createdUserId) {
+        console.log("Calling onCompleteRegistration with:", {
+          fullname: values.fullname,
+          userId: signUp.createdUserId,
+          type: values.type,
+        });
+  
         const registered = await onCompleteRegistration(
           values.fullname,
           signUp.createdUserId,
           values.type
         );
-
+  
+        console.log("Registration response:", registered);
+  
         if (registered?.status === 200 && registered.user) {
           // Set the user session as active
+          console.log("Activating session with ID:", completeSignUp.createdSessionId);
           await setActive({ session: completeSignUp.createdSessionId });
-
+  
           // Redirect to dashboard
           toast.success("Sign-up successful! Redirecting...");
           router.push("/dashboard");

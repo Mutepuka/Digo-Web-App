@@ -9,7 +9,8 @@ const ButtonHandler = () => {
   const { formState, getFieldState, getValues } = useFormContext();
   const { onGenerateOTP } = useSignUpForm();
 
-  const { isDirty: isName } = getFieldState('fullname', formState);
+  // const { isDirty: isFirstName } = getFieldState('firstName', formState);
+  // const { isDirty: isLastName } = getFieldState('lastName', formState);
   const { isDirty: isEmail } = getFieldState('email', formState); // Fixed typo
   const { isDirty: isPassword } = getFieldState('password', formState); // Fixed typo
 
@@ -35,7 +36,7 @@ const ButtonHandler = () => {
           className="btn btn-a-continue"
           type="button" // Use type="button" to prevent form submission
           onClick={() => {
-            if (isName && isEmail && isPassword) {
+            if (isEmail && isPassword) {
               onGenerateOTP(getValues('email'), getValues('password'), setCurrentStep);
             }
           }}

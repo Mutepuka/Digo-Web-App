@@ -1,54 +1,24 @@
 *{
   padding: 0;
   margin: 0;
-}.sign-up-wrapper {
-    display: none; /* Hidden by default */
-    flex-grow: 1; /* Equivalent to flex-1 */
-    width: 100%; /* Equivalent to w-full */
-    max-width: 4000px;
-    max-height: 100%;
-    flex-direction: column;
-    padding-top: 5rem; /* pt-10 (Bootstrap uses rem units) */
-    padding-left: 6rem; /* pl-24 */
-    gap: 1rem; /* gap-3 */
-    overflow: hidden;
-    position: relative;
-  }
+}
+.con-wrapper{
+  background-color:#e6a627;
   
-  /* Show on large screens (lg:flex in Tailwind) */
-  @media (min-width: 992px) { /* Bootstrap's lg breakpoint */
-    .sign-up-wrapper {
-      display: flex;
-    }
-  }
-  .welcome-heading {
-    font-size: 2rem; /* Default size */
-    font-weight: bold;
-    color: #212529; /* Bootstrap default text color */
-  }
-  
-  /* Medium screens (md:text-4xl) */
-  @media (min-width: 768px) {
-    .welcome-heading {
-      font-size: 2.5rem; /* Adjusted for md:text-4xl */
-    }
-  }
-  
-  .welcome-tag{
-    font-size: 1rem; /* Default size */
-    margin-bottom: 2.5rem; /* Equivalent to mb-10 */
-    color: #6c757d; /* Bootstrap text-muted color */
-  }
-  
-  /* Medium screens (md:text-sm) */
-  @media (min-width: 768px) {
-    .welcome-tag{
-      font-size: 0.875rem; /* Adjusted for md:text-sm */
-    }
-  }
+}
+  .logo-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
+.construction-placeholder {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px dashed #eee;
+}
   .con{ 
     height: 100vh;
+    background-color: #e6a627;
     
   }
   .branding{
