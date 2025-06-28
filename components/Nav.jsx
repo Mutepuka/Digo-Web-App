@@ -85,9 +85,7 @@ const Nav = () => {
                         </li>
                     ))}
                 </ul>
-            </div>
-            <div className='d-flex justify-content-end align-items-center gap-3'>
-            {/** user area login or my orders */}
+                {/** user area login or my orders */}
             <ClerkLoaded>
                 <SignedIn>
                     <Link href='/pilot'
@@ -115,6 +113,10 @@ const Nav = () => {
                 
 
             </ClerkLoaded>
+            </div>
+
+            <div className='d-flex justify-content-end align-items-center gap-3'>
+            
             <button
             type='button'
             className='btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse'
