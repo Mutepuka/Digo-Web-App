@@ -89,14 +89,14 @@ const Nav = () => {
             <ClerkLoaded>
                 <SignedIn>
                     <Link href='/pilot'
-                    className='mt-0 mt-lg-1'>
+                    className='mt-0 mt-lg-0'>
                         {/* <PackageIcon className='w-6 h-6'/> */}
                         <HousePlug />
                     </Link>
                 </SignedIn>
 
                 {user ?(
-                    <div className='mt-0 mt-lg-2'>
+                    <div className='mt-0 mt-lg-0'>
                         <UserButton/>
                         
                     </div>
